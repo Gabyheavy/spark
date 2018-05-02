@@ -29,7 +29,7 @@ object RandomForestClassificationExample {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("RandomForestClassificationExample")
     val sc = new SparkContext(conf)
-    //do not print all the log
+    // do not print all the log
     sc.setLogLevel("ERROR")
     // $example on$
     // Load and parse the data file.
