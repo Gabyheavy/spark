@@ -1105,9 +1105,15 @@ private[spark] object RandomForest extends Logging {
       val featureSubset: Option[Array[Int]] = if (metadata.subsamplingFeatures) {
         Some(SamplingUtils.reservoirSampleAndCount(Range(0,
           metadata.numFeatures).iterator, metadata.numFeaturesPerNode, rng.nextLong())._1)
+
       } else {
         None
       }
+
+      val featureToPrint = featureSubset.getOrElse(Array(0)).mkString(" ")
+      // scalastyle:off
+      println(s"Here is the sampling : $featureToPrint ")
+      // scalastyle:on
       // Check if enough memory remains to add this node to the group.
       val nodeMemUsage = RandomForest.aggregateSizeForNode(metadata, featureSubset) * 8L
       if (memUsage + nodeMemUsage <= maxMemoryUsage || memUsage == 0) {

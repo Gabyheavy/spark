@@ -104,6 +104,25 @@ private[spark] object SamplingUtils {
       BinomialBounds.getUpperBound(1e-4, total, fraction)
     }
   }
+
+  /**
+    * Reservoir list sampling implementation
+    * that make sure to reduce variance of variables occurrences.
+    * Also returns the input size.
+    *
+    * @param input input size
+    * @param k reservoir size
+    * @param seed random seed
+    * @return (samples, input size)
+    */
+  def reservoirListSampleAndCount[T : ClassTag](
+                                                 input: Iterator[T],
+                                                 k: Int,
+                                                 seed: Long = Random.nextLong())
+  : (Array[Array[T]], Long) = {
+    (Array(Array()), 0)
+  }
+
 }
 
 /**
@@ -167,3 +186,5 @@ private[spark] object BinomialBounds {
       math.max(minSamplingRate, fraction + gamma + math.sqrt(gamma * gamma + 2 * gamma * fraction)))
   }
 }
+
+

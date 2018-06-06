@@ -1,0 +1,2365 @@
+18/06/05 17:17:46 WARN Utils: Your hostname, eisti-ThinkPad-T550 resolves to a loopback address: 127.0.1.1; using 172.17.9.20 instead (on interface wlp3s0)
+18/06/05 17:17:46 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+18/06/05 17:17:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+18/06/05 17:17:48 INFO SparkContext: Running Spark version 2.4.0-SNAPSHOT
+18/06/05 17:17:48 INFO SparkContext: Submitted application: OurRandomForest
+18/06/05 17:17:48 INFO SecurityManager: Changing view acls to: eisti
+18/06/05 17:17:48 INFO SecurityManager: Changing modify acls to: eisti
+18/06/05 17:17:48 INFO SecurityManager: Changing view acls groups to: 
+18/06/05 17:17:48 INFO SecurityManager: Changing modify acls groups to: 
+18/06/05 17:17:48 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(eisti); groups with view permissions: Set(); users  with modify permissions: Set(eisti); groups with modify permissions: Set()
+18/06/05 17:17:49 INFO Utils: Successfully started service 'sparkDriver' on port 36073.
+18/06/05 17:17:49 INFO SparkEnv: Registering MapOutputTracker
+18/06/05 17:17:49 INFO SparkEnv: Registering BlockManagerMaster
+18/06/05 17:17:49 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/06/05 17:17:49 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/06/05 17:17:49 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-50b8f5c8-5e96-4ab1-86cb-3d05b044d000
+18/06/05 17:17:49 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+18/06/05 17:17:49 INFO SparkEnv: Registering OutputCommitCoordinator
+18/06/05 17:17:49 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/06/05 17:17:49 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://172.17.9.20:4040
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/commons-codec-1.10.jar at spark://172.17.9.20:36073/jars/commons-codec-1.10.jar with timestamp 1528211869931
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/objenesis-2.1.jar at spark://172.17.9.20:36073/jars/objenesis-2.1.jar with timestamp 1528211869932
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/orc-core-1.4.3-nohive.jar at spark://172.17.9.20:36073/jars/orc-core-1.4.3-nohive.jar with timestamp 1528211869932
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/aircompressor-0.8.jar at spark://172.17.9.20:36073/jars/aircompressor-0.8.jar with timestamp 1528211869932
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/scopt_2.11-3.7.0.jar at spark://172.17.9.20:36073/jars/scopt_2.11-3.7.0.jar with timestamp 1528211869933
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/minlog-1.3.0.jar at spark://172.17.9.20:36073/jars/minlog-1.3.0.jar with timestamp 1528211869933
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/orc-mapreduce-1.4.3-nohive.jar at spark://172.17.9.20:36073/jars/orc-mapreduce-1.4.3-nohive.jar with timestamp 1528211869933
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/commons-lang-2.6.jar at spark://172.17.9.20:36073/jars/commons-lang-2.6.jar with timestamp 1528211869933
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/spark-examples_2.11-2.4.0-SNAPSHOT.jar at spark://172.17.9.20:36073/jars/spark-examples_2.11-2.4.0-SNAPSHOT.jar with timestamp 1528211869933
+18/06/05 17:17:49 INFO SparkContext: Added JAR file:///home/eisti/spark/examples/target/scala-2.11/jars/kryo-shaded-3.0.3.jar at spark://172.17.9.20:36073/jars/kryo-shaded-3.0.3.jar with timestamp 1528211869934
+18/06/05 17:17:50 INFO Executor: Starting executor ID driver on host localhost
+18/06/05 17:17:50 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34557.
+18/06/05 17:17:50 INFO NettyBlockTransferService: Server created on 172.17.9.20:34557
+18/06/05 17:17:50 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/06/05 17:17:50 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.17.9.20, 34557, None)
+18/06/05 17:17:50 INFO BlockManagerMasterEndpoint: Registering block manager 172.17.9.20:34557 with 366.3 MB RAM, BlockManagerId(driver, 172.17.9.20, 34557, None)
+18/06/05 17:17:50 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.17.9.20, 34557, None)
+18/06/05 17:17:50 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.17.9.20, 34557, None)
+18/06/05 17:17:51 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 214.6 KB, free 366.1 MB)
+18/06/05 17:17:51 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 20.4 KB, free 366.1 MB)
+18/06/05 17:17:51 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.17.9.20:34557 (size: 20.4 KB, free: 366.3 MB)
+18/06/05 17:17:51 INFO SparkContext: Created broadcast 0 from textFile at MLUtils.scala:101
+18/06/05 17:17:51 INFO FileInputFormat: Total input paths to process : 1
+18/06/05 17:17:51 INFO SparkContext: Starting job: reduce at MLUtils.scala:94
+18/06/05 17:17:51 INFO DAGScheduler: Got job 0 (reduce at MLUtils.scala:94) with 3 output partitions
+18/06/05 17:17:51 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at MLUtils.scala:94)
+18/06/05 17:17:51 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:17:51 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:17:51 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[5] at map at MLUtils.scala:92), which has no missing parents
+18/06/05 17:17:52 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.1 KB, free 366.1 MB)
+18/06/05 17:17:52 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 2.3 KB, free 366.1 MB)
+18/06/05 17:17:52 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.17.9.20:34557 (size: 2.3 KB, free: 366.3 MB)
+18/06/05 17:17:52 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:17:52 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at map at MLUtils.scala:92) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:17:52 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+18/06/05 17:17:52 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:52 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:52 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:52 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+18/06/05 17:17:52 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+18/06/05 17:17:52 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/commons-lang-2.6.jar with timestamp 1528211869933
+18/06/05 17:17:52 INFO TransportClientFactory: Successfully created connection to /172.17.9.20:36073 after 64 ms (0 ms spent in bootstraps)
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/commons-lang-2.6.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp6983502731467246072.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/commons-lang-2.6.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/scopt_2.11-3.7.0.jar with timestamp 1528211869933
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/scopt_2.11-3.7.0.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp2615980491124917316.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/scopt_2.11-3.7.0.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/commons-codec-1.10.jar with timestamp 1528211869931
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/commons-codec-1.10.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp7143098735713834745.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/commons-codec-1.10.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/spark-examples_2.11-2.4.0-SNAPSHOT.jar with timestamp 1528211869933
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/spark-examples_2.11-2.4.0-SNAPSHOT.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp6357843887423562873.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/spark-examples_2.11-2.4.0-SNAPSHOT.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/aircompressor-0.8.jar with timestamp 1528211869932
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/aircompressor-0.8.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp4274722371353177107.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/aircompressor-0.8.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/kryo-shaded-3.0.3.jar with timestamp 1528211869934
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/kryo-shaded-3.0.3.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp5917340813366853673.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/kryo-shaded-3.0.3.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/orc-mapreduce-1.4.3-nohive.jar with timestamp 1528211869933
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/orc-mapreduce-1.4.3-nohive.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp6958966187253321787.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/orc-mapreduce-1.4.3-nohive.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/objenesis-2.1.jar with timestamp 1528211869932
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/objenesis-2.1.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp3099275542639862360.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/objenesis-2.1.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/orc-core-1.4.3-nohive.jar with timestamp 1528211869932
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/orc-core-1.4.3-nohive.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp959474086878066715.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/orc-core-1.4.3-nohive.jar to class loader
+18/06/05 17:17:52 INFO Executor: Fetching spark://172.17.9.20:36073/jars/minlog-1.3.0.jar with timestamp 1528211869933
+18/06/05 17:17:52 INFO Utils: Fetching spark://172.17.9.20:36073/jars/minlog-1.3.0.jar to /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/fetchFileTemp5862409365037966969.tmp
+18/06/05 17:17:52 INFO Executor: Adding file:/tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b/userFiles-0359f161-fafd-4ae4-ae44-a72a75615f75/minlog-1.3.0.jar to class loader
+18/06/05 17:17:52 INFO HadoopRDD: Input split: file:/home/eisti/spark/data/mllib/wave500k_libsvm.txt:33554432+33554432
+18/06/05 17:17:52 INFO HadoopRDD: Input split: file:/home/eisti/spark/data/mllib/wave500k_libsvm.txt:0+33554432
+18/06/05 17:17:52 INFO HadoopRDD: Input split: file:/home/eisti/spark/data/mllib/wave500k_libsvm.txt:67108864+14080801
+18/06/05 17:17:54 INFO MemoryStore: Block rdd_4_2 stored as values in memory (estimated size 28.1 MB, free 338.0 MB)
+18/06/05 17:17:54 INFO BlockManagerInfo: Added rdd_4_2 in memory on 172.17.9.20:34557 (size: 28.1 MB, free: 338.2 MB)
+18/06/05 17:17:54 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 953 bytes result sent to driver
+18/06/05 17:17:54 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 2474 ms on localhost (executor driver) (1/3)
+18/06/05 17:17:56 INFO MemoryStore: Block rdd_4_1 stored as values in memory (estimated size 66.8 MB, free 271.2 MB)
+18/06/05 17:17:56 INFO BlockManagerInfo: Added rdd_4_1 in memory on 172.17.9.20:34557 (size: 66.8 MB, free: 271.4 MB)
+18/06/05 17:17:56 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 953 bytes result sent to driver
+18/06/05 17:17:56 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 4467 ms on localhost (executor driver) (2/3)
+18/06/05 17:17:56 INFO MemoryStore: Block rdd_4_0 stored as values in memory (estimated size 66.7 MB, free 204.5 MB)
+18/06/05 17:17:56 INFO BlockManagerInfo: Added rdd_4_0 in memory on 172.17.9.20:34557 (size: 66.7 MB, free: 204.7 MB)
+18/06/05 17:17:56 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 953 bytes result sent to driver
+18/06/05 17:17:56 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4754 ms on localhost (executor driver) (3/3)
+18/06/05 17:17:56 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+18/06/05 17:17:56 INFO DAGScheduler: ResultStage 0 (reduce at MLUtils.scala:94) finished in 4,880 s
+18/06/05 17:17:56 INFO DAGScheduler: Job 0 finished: reduce at MLUtils.scala:94, took 5,097079 s
+18/06/05 17:17:57 INFO SparkContext: Starting job: take at DecisionTreeMetadata.scala:112
+18/06/05 17:17:57 INFO DAGScheduler: Got job 1 (take at DecisionTreeMetadata.scala:112) with 1 output partitions
+18/06/05 17:17:57 INFO DAGScheduler: Final stage: ResultStage 1 (take at DecisionTreeMetadata.scala:112)
+18/06/05 17:17:57 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:17:57 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:17:57 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[11] at map at DecisionTreeMetadata.scala:112), which has no missing parents
+18/06/05 17:17:57 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.2 KB, free 204.5 MB)
+18/06/05 17:17:57 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.7 KB, free 204.5 MB)
+18/06/05 17:17:57 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.17.9.20:34557 (size: 2.7 KB, free: 204.7 MB)
+18/06/05 17:17:57 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:17:57 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[11] at map at DecisionTreeMetadata.scala:112) (first 15 tasks are for partitions Vector(0))
+18/06/05 17:17:57 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+18/06/05 17:17:57 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 3, localhost, executor driver, partition 0, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:57 INFO Executor: Running task 0.0 in stage 1.0 (TID 3)
+18/06/05 17:17:57 INFO BlockManager: Found block rdd_4_0 locally
+18/06/05 17:17:57 INFO Executor: 1 block locks were not released by TID = 3:
+[rdd_4_0]
+18/06/05 17:17:57 INFO Executor: Finished task 0.0 in stage 1.0 (TID 3). 781 bytes result sent to driver
+18/06/05 17:17:57 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 206 ms on localhost (executor driver) (1/1)
+18/06/05 17:17:57 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+18/06/05 17:17:57 INFO DAGScheduler: ResultStage 1 (take at DecisionTreeMetadata.scala:112) finished in 0,246 s
+18/06/05 17:17:57 INFO DAGScheduler: Job 1 finished: take at DecisionTreeMetadata.scala:112, took 0,257771 s
+18/06/05 17:17:57 INFO SparkContext: Starting job: count at DecisionTreeMetadata.scala:118
+18/06/05 17:17:57 INFO DAGScheduler: Got job 2 (count at DecisionTreeMetadata.scala:118) with 3 output partitions
+18/06/05 17:17:57 INFO DAGScheduler: Final stage: ResultStage 2 (count at DecisionTreeMetadata.scala:118)
+18/06/05 17:17:57 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:17:57 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:17:57 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[10] at retag at RandomForest.scala:104), which has no missing parents
+18/06/05 17:17:57 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 4.7 KB, free 204.5 MB)
+18/06/05 17:17:57 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 2.5 KB, free 204.5 MB)
+18/06/05 17:17:57 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.17.9.20:34557 (size: 2.5 KB, free: 204.7 MB)
+18/06/05 17:17:57 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:17:57 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 2 (MapPartitionsRDD[10] at retag at RandomForest.scala:104) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:17:57 INFO TaskSchedulerImpl: Adding task set 2.0 with 3 tasks
+18/06/05 17:17:57 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, executor driver, partition 0, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:57 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, executor driver, partition 1, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:57 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 6, localhost, executor driver, partition 2, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:17:57 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+18/06/05 17:17:57 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+18/06/05 17:17:57 INFO Executor: Running task 2.0 in stage 2.0 (TID 6)
+18/06/05 17:17:57 INFO BlockManager: Found block rdd_4_0 locally
+18/06/05 17:17:57 INFO BlockManager: Found block rdd_4_2 locally
+18/06/05 17:17:57 INFO BlockManager: Found block rdd_4_1 locally
+18/06/05 17:17:57 INFO Executor: Finished task 2.0 in stage 2.0 (TID 6). 875 bytes result sent to driver
+18/06/05 17:17:57 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 6) in 176 ms on localhost (executor driver) (1/3)
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 26
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 37
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 38
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 44
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 42
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 45
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 34
+18/06/05 17:17:57 INFO ContextCleaner: Cleaned accumulator 31
+18/06/05 17:17:58 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.17.9.20:34557 in memory (size: 2.7 KB, free: 204.7 MB)
+18/06/05 17:17:58 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 875 bytes result sent to driver
+18/06/05 17:17:58 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 875 bytes result sent to driver
+18/06/05 17:17:58 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 631 ms on localhost (executor driver) (2/3)
+18/06/05 17:17:58 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 633 ms on localhost (executor driver) (3/3)
+18/06/05 17:17:58 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+18/06/05 17:17:58 INFO DAGScheduler: ResultStage 2 (count at DecisionTreeMetadata.scala:118) finished in 0,654 s
+18/06/05 17:17:58 INFO DAGScheduler: Job 2 finished: count at DecisionTreeMetadata.scala:118, took 0,665833 s
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 48
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 27
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 33
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 28
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 46
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 47
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 39
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 32
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 41
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 25
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 49
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 40
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 43
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 29
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 35
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 36
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 30
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 6
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 2
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 1
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 5
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 8
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 20
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 13
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 23
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 9
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 10
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 12
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 24
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 18
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 4
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 21
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 19
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 15
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 7
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 3
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 14
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 11
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 17
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 16
+18/06/05 17:17:58 INFO RandomForest: numFeatures: 21
+18/06/05 17:17:58 INFO RandomForest: numClasses: 3
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 0
+18/06/05 17:17:58 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.17.9.20:34557 in memory (size: 2.3 KB, free: 204.7 MB)
+18/06/05 17:17:58 INFO ContextCleaner: Cleaned accumulator 22
+18/06/05 17:17:58 INFO SparkContext: Starting job: collectAsMap at RandomForest.scala:925
+18/06/05 17:17:58 INFO DAGScheduler: Registering RDD 13 (flatMap at RandomForest.scala:917)
+18/06/05 17:17:58 INFO DAGScheduler: Got job 3 (collectAsMap at RandomForest.scala:925) with 3 output partitions
+18/06/05 17:17:58 INFO DAGScheduler: Final stage: ResultStage 4 (collectAsMap at RandomForest.scala:925)
+18/06/05 17:17:58 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+18/06/05 17:17:58 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+18/06/05 17:17:58 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[13] at flatMap at RandomForest.scala:917), which has no missing parents
+18/06/05 17:17:58 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 8.4 KB, free 204.5 MB)
+18/06/05 17:17:58 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.4 KB, free 204.5 MB)
+18/06/05 17:17:58 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.17.9.20:34557 (size: 4.4 KB, free: 204.7 MB)
+18/06/05 17:17:58 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:17:58 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[13] at flatMap at RandomForest.scala:917) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:17:58 INFO TaskSchedulerImpl: Adding task set 3.0 with 3 tasks
+18/06/05 17:17:58 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 7, localhost, executor driver, partition 0, PROCESS_LOCAL, 7998 bytes)
+18/06/05 17:17:58 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 8, localhost, executor driver, partition 1, PROCESS_LOCAL, 7998 bytes)
+18/06/05 17:17:58 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 9, localhost, executor driver, partition 2, PROCESS_LOCAL, 7998 bytes)
+18/06/05 17:17:58 INFO Executor: Running task 0.0 in stage 3.0 (TID 7)
+18/06/05 17:17:58 INFO Executor: Running task 1.0 in stage 3.0 (TID 8)
+18/06/05 17:17:58 INFO Executor: Running task 2.0 in stage 3.0 (TID 9)
+18/06/05 17:17:58 INFO BlockManager: Found block rdd_4_2 locally
+18/06/05 17:17:58 INFO BlockManager: Found block rdd_4_1 locally
+18/06/05 17:17:58 INFO BlockManager: Found block rdd_4_0 locally
+18/06/05 17:18:00 INFO Executor: Finished task 2.0 in stage 3.0 (TID 9). 1068 bytes result sent to driver
+18/06/05 17:18:00 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 9) in 2474 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:00 INFO Executor: Finished task 0.0 in stage 3.0 (TID 7). 1025 bytes result sent to driver
+18/06/05 17:18:00 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 7) in 2509 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:00 INFO Executor: Finished task 1.0 in stage 3.0 (TID 8). 1025 bytes result sent to driver
+18/06/05 17:18:00 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 8) in 2523 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:00 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+18/06/05 17:18:00 INFO DAGScheduler: ShuffleMapStage 3 (flatMap at RandomForest.scala:917) finished in 2,546 s
+18/06/05 17:18:00 INFO DAGScheduler: looking for newly runnable stages
+18/06/05 17:18:00 INFO DAGScheduler: running: Set()
+18/06/05 17:18:00 INFO DAGScheduler: waiting: Set(ResultStage 4)
+18/06/05 17:18:00 INFO DAGScheduler: failed: Set()
+18/06/05 17:18:00 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[15] at map at RandomForest.scala:920), which has no missing parents
+18/06/05 17:18:00 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 11.0 KB, free 204.4 MB)
+18/06/05 17:18:00 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.6 KB, free 204.4 MB)
+18/06/05 17:18:00 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.17.9.20:34557 (size: 5.6 KB, free: 204.7 MB)
+18/06/05 17:18:00 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:00 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 4 (MapPartitionsRDD[15] at map at RandomForest.scala:920) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:00 INFO TaskSchedulerImpl: Adding task set 4.0 with 3 tasks
+18/06/05 17:18:00 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 10, localhost, executor driver, partition 0, ANY, 7649 bytes)
+18/06/05 17:18:00 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 11, localhost, executor driver, partition 1, ANY, 7649 bytes)
+18/06/05 17:18:00 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 12, localhost, executor driver, partition 2, ANY, 7649 bytes)
+18/06/05 17:18:00 INFO Executor: Running task 1.0 in stage 4.0 (TID 11)
+18/06/05 17:18:00 INFO Executor: Running task 0.0 in stage 4.0 (TID 10)
+18/06/05 17:18:00 INFO Executor: Running task 2.0 in stage 4.0 (TID 12)
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:00 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+18/06/05 17:18:01 INFO Executor: Finished task 0.0 in stage 4.0 (TID 10). 5536 bytes result sent to driver
+18/06/05 17:18:01 INFO Executor: Finished task 1.0 in stage 4.0 (TID 11). 5536 bytes result sent to driver
+18/06/05 17:18:01 INFO Executor: Finished task 2.0 in stage 4.0 (TID 12). 5536 bytes result sent to driver
+18/06/05 17:18:01 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 11) in 650 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:01 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 10) in 652 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:01 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 12) in 651 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:01 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+18/06/05 17:18:01 INFO DAGScheduler: ResultStage 4 (collectAsMap at RandomForest.scala:925) finished in 0,662 s
+18/06/05 17:18:01 INFO DAGScheduler: Job 3 finished: collectAsMap at RandomForest.scala:925, took 3,248412 s
+Here is the sampling : 16 9 10 17 20 
+Here is the sampling : 13 1 20 7 14 
+Here is the sampling : 6 11 18 3 15 
+Here is the sampling : 19 10 16 12 9 
+Here is the sampling : 8 10 7 3 20 
+Here is the sampling : 0 19 6 15 14 
+Here is the sampling : 0 19 18 10 20 
+Here is the sampling : 0 11 17 3 9 
+Here is the sampling : 12 17 5 14 4 
+Here is the sampling : 9 7 2 14 19 
+Here is the sampling : 19 1 2 16 8 
+Here is the sampling : 7 19 20 8 12 
+Here is the sampling : 13 15 14 9 4 
+Here is the sampling : 17 6 2 16 11 
+Here is the sampling : 14 7 19 17 16 
+Here is the sampling : 18 20 2 9 5 
+Here is the sampling : 8 20 15 7 10 
+Here is the sampling : 13 20 9 7 14 
+Here is the sampling : 11 1 9 20 19 
+Here is the sampling : 17 16 2 15 4 
+Here is the sampling : 10 14 2 6 4 
+Here is the sampling : 10 17 11 12 19 
+Here is the sampling : 9 16 2 3 14 
+Here is the sampling : 14 1 2 3 4 
+Here is the sampling : 16 1 11 15 6 
+Here is the sampling : 11 16 5 3 6 
+Here is the sampling : 20 1 13 3 15 
+Here is the sampling : 10 11 17 16 5 
+Here is the sampling : 8 18 2 20 7 
+Here is the sampling : 15 11 2 3 4 
+Here is the sampling : 17 13 2 10 4 
+Here is the sampling : 14 1 9 15 19 
+Here is the sampling : 10 1 20 3 17 
+Here is the sampling : 0 13 6 16 5 
+Here is the sampling : 7 13 16 14 5 
+Here is the sampling : 0 11 8 12 19 
+Here is the sampling : 16 20 13 9 11 
+Here is the sampling : 17 7 2 3 11 
+Here is the sampling : 7 20 17 12 4 
+Here is the sampling : 9 8 20 3 12 
+Here is the sampling : 5 18 2 16 14 
+Here is the sampling : 18 13 2 19 16 
+Here is the sampling : 17 18 14 3 4 
+Here is the sampling : 6 18 10 3 12 
+Here is the sampling : 10 17 7 19 4 
+Here is the sampling : 6 19 10 13 15 
+Here is the sampling : 6 11 2 5 7 
+Here is the sampling : 0 19 2 10 7 
+Here is the sampling : 20 1 13 6 15 
+Here is the sampling : 7 11 13 10 12 
+18/06/05 17:18:01 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 6.5 KB, free 204.4 MB)
+18/06/05 17:18:01 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 1217.0 B, free 204.4 MB)
+18/06/05 17:18:01 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.17.9.20:34557 (size: 1217.0 B, free: 204.7 MB)
+18/06/05 17:18:01 INFO SparkContext: Created broadcast 6 from broadcast at RandomForest.scala:515
+18/06/05 17:18:01 INFO SparkContext: Starting job: collectAsMap at RandomForest.scala:565
+18/06/05 17:18:01 INFO DAGScheduler: Registering RDD 18 (mapPartitions at RandomForest.scala:536)
+18/06/05 17:18:01 INFO DAGScheduler: Got job 4 (collectAsMap at RandomForest.scala:565) with 3 output partitions
+18/06/05 17:18:01 INFO DAGScheduler: Final stage: ResultStage 6 (collectAsMap at RandomForest.scala:565)
+18/06/05 17:18:01 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+18/06/05 17:18:01 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+18/06/05 17:18:01 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[18] at mapPartitions at RandomForest.scala:536), which has no missing parents
+18/06/05 17:18:01 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 30.8 KB, free 204.4 MB)
+18/06/05 17:18:01 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 12.6 KB, free 204.4 MB)
+18/06/05 17:18:01 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.17.9.20:34557 (size: 12.6 KB, free: 204.7 MB)
+18/06/05 17:18:01 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:01 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[18] at mapPartitions at RandomForest.scala:536) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:01 INFO TaskSchedulerImpl: Adding task set 5.0 with 3 tasks
+18/06/05 17:18:01 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 13, localhost, executor driver, partition 0, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:01 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 14, localhost, executor driver, partition 1, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:01 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 15, localhost, executor driver, partition 2, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:01 INFO Executor: Running task 0.0 in stage 5.0 (TID 13)
+18/06/05 17:18:01 INFO Executor: Running task 1.0 in stage 5.0 (TID 14)
+18/06/05 17:18:01 INFO Executor: Running task 2.0 in stage 5.0 (TID 15)
+18/06/05 17:18:01 INFO BlockManager: Found block rdd_4_0 locally
+18/06/05 17:18:01 INFO BlockManager: Found block rdd_4_2 locally
+18/06/05 17:18:01 INFO BlockManager: Found block rdd_4_1 locally
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 123
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 105
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 114
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 110
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 112
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 120
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 107
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 103
+18/06/05 17:18:01 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.17.9.20:34557 in memory (size: 5.6 KB, free: 204.7 MB)
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 116
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 122
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 104
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 121
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 118
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 108
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 111
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 124
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 115
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 102
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 109
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 106
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 100
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 119
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 117
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 113
+18/06/05 17:18:01 INFO ContextCleaner: Cleaned accumulator 101
+18/06/05 17:18:02 INFO MemoryStore: Block rdd_17_2 stored as values in memory (estimated size 33.1 MB, free 171.4 MB)
+18/06/05 17:18:02 INFO BlockManagerInfo: Added rdd_17_2 in memory on 172.17.9.20:34557 (size: 33.1 MB, free: 171.6 MB)
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 89
+18/06/05 17:18:02 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.17.9.20:34557 in memory (size: 4.4 KB, free: 171.6 MB)
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 68
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 56
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 83
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 84
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 74
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 51
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 79
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 77
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 75
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 71
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 82
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 87
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 52
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 63
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 88
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 73
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 69
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 80
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 78
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 72
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 85
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 67
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 65
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 61
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 64
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 95
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 62
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 93
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 70
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 53
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 86
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 59
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 90
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 66
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 98
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 76
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 91
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 60
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 92
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 55
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 50
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 54
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 94
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 57
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 96
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 81
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned shuffle 0
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 99
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 97
+18/06/05 17:18:02 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.17.9.20:34557 in memory (size: 2.5 KB, free: 171.6 MB)
+18/06/05 17:18:02 INFO ContextCleaner: Cleaned accumulator 58
+18/06/05 17:18:03 INFO Executor: Finished task 2.0 in stage 5.0 (TID 15). 1154 bytes result sent to driver
+18/06/05 17:18:03 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 15) in 1577 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:03 INFO MemoryStore: Will not store rdd_17_0
+18/06/05 17:18:03 WARN MemoryStore: Not enough space to cache rdd_17_0 in memory! (computed 67.7 MB so far)
+18/06/05 17:18:03 INFO MemoryStore: Memory use = 194.9 MB (blocks) + 169.1 MB (scratch space shared across 2 tasks(s)) = 364.1 MB. Storage limit = 366.3 MB.
+18/06/05 17:18:03 WARN BlockManager: Persisting block rdd_17_0 to disk instead.
+18/06/05 17:18:03 INFO MemoryStore: Block rdd_17_1 stored as values in memory (estimated size 78.7 MB, free 92.7 MB)
+18/06/05 17:18:03 INFO BlockManagerInfo: Added rdd_17_1 in memory on 172.17.9.20:34557 (size: 78.7 MB, free: 92.9 MB)
+18/06/05 17:18:03 INFO BlockManagerInfo: Added rdd_17_0 on disk on 172.17.9.20:34557 (size: 72.6 MB)
+18/06/05 17:18:04 INFO Executor: Finished task 1.0 in stage 5.0 (TID 14). 1154 bytes result sent to driver
+18/06/05 17:18:04 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 14) in 2761 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:04 INFO MemoryStore: 5 blocks selected for dropping (66.9 MB bytes)
+18/06/05 17:18:04 INFO BlockManager: Dropping block broadcast_0_piece0 from memory
+18/06/05 17:18:04 INFO BlockManager: Writing block broadcast_0_piece0 to disk
+18/06/05 17:18:04 INFO BlockManagerInfo: Updated broadcast_0_piece0 on disk on 172.17.9.20:34557 (current size: 20.4 KB, original size: 0.0 B)
+18/06/05 17:18:04 INFO BlockManager: Dropping block broadcast_0 from memory
+18/06/05 17:18:04 INFO BlockManager: Writing block broadcast_0 to disk
+18/06/05 17:18:04 INFO BlockManager: Dropping block broadcast_6_piece0 from memory
+18/06/05 17:18:04 INFO BlockManager: Writing block broadcast_6_piece0 to disk
+18/06/05 17:18:04 INFO BlockManagerInfo: Updated broadcast_6_piece0 on disk on 172.17.9.20:34557 (current size: 1217.0 B, original size: 0.0 B)
+18/06/05 17:18:04 INFO BlockManager: Dropping block broadcast_7_piece0 from memory
+18/06/05 17:18:04 INFO BlockManager: Writing block broadcast_7_piece0 to disk
+18/06/05 17:18:04 INFO BlockManagerInfo: Updated broadcast_7_piece0 on disk on 172.17.9.20:34557 (current size: 12.6 KB, original size: 0.0 B)
+18/06/05 17:18:04 INFO BlockManager: Dropping block rdd_4_0 from memory
+18/06/05 17:18:04 INFO BlockManagerInfo: Removed rdd_4_0 on 172.17.9.20:34557 in memory (size: 66.7 MB, free: 159.6 MB)
+18/06/05 17:18:04 INFO MemoryStore: After dropping 5 blocks, free memory is 159.6 MB
+18/06/05 17:18:04 INFO MemoryStore: Block rdd_17_0 stored as values in memory (estimated size 78.9 MB, free 80.7 MB)
+18/06/05 17:18:05 INFO Executor: Finished task 0.0 in stage 5.0 (TID 13). 1154 bytes result sent to driver
+18/06/05 17:18:05 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 13) in 3733 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:05 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+18/06/05 17:18:05 INFO DAGScheduler: ShuffleMapStage 5 (mapPartitions at RandomForest.scala:536) finished in 3,750 s
+18/06/05 17:18:05 INFO DAGScheduler: looking for newly runnable stages
+18/06/05 17:18:05 INFO DAGScheduler: running: Set()
+18/06/05 17:18:05 INFO DAGScheduler: waiting: Set(ResultStage 6)
+18/06/05 17:18:05 INFO DAGScheduler: failed: Set()
+18/06/05 17:18:05 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[20] at map at RandomForest.scala:555), which has no missing parents
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 17.8 KB, free 80.7 MB)
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 6.4 KB, free 80.7 MB)
+18/06/05 17:18:05 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.17.9.20:34557 (size: 6.4 KB, free: 159.6 MB)
+18/06/05 17:18:05 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 6 (MapPartitionsRDD[20] at map at RandomForest.scala:555) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:05 INFO TaskSchedulerImpl: Adding task set 6.0 with 3 tasks
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 16, localhost, executor driver, partition 0, ANY, 7649 bytes)
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 17, localhost, executor driver, partition 1, ANY, 7649 bytes)
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 18, localhost, executor driver, partition 2, ANY, 7649 bytes)
+18/06/05 17:18:05 INFO Executor: Running task 0.0 in stage 6.0 (TID 16)
+18/06/05 17:18:05 INFO Executor: Running task 1.0 in stage 6.0 (TID 17)
+18/06/05 17:18:05 INFO Executor: Running task 2.0 in stage 6.0 (TID 18)
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:05 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:05 INFO Executor: Finished task 1.0 in stage 6.0 (TID 17). 4790 bytes result sent to driver
+18/06/05 17:18:05 INFO Executor: Finished task 0.0 in stage 6.0 (TID 16). 4816 bytes result sent to driver
+18/06/05 17:18:05 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 17) in 129 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:05 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 16) in 132 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:05 INFO Executor: Finished task 2.0 in stage 6.0 (TID 18). 4564 bytes result sent to driver
+18/06/05 17:18:05 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 18) in 142 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:05 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+18/06/05 17:18:05 INFO DAGScheduler: ResultStage 6 (collectAsMap at RandomForest.scala:565) finished in 0,441 s
+18/06/05 17:18:05 INFO DAGScheduler: Job 4 finished: collectAsMap at RandomForest.scala:565, took 4,201718 s
+Here is the sampling : 0 13 20 3 8 
+Here is the sampling : 7 1 14 19 4 
+Here is the sampling : 15 19 10 16 4 
+Here is the sampling : 16 1 5 10 4 
+Here is the sampling : 7 14 17 3 10 
+Here is the sampling : 11 1 2 15 14 
+Here is the sampling : 11 5 9 3 13 
+Here is the sampling : 20 6 7 14 13 
+Here is the sampling : 9 17 18 10 20 
+Here is the sampling : 6 13 2 3 11 
+Here is the sampling : 6 10 2 19 4 
+Here is the sampling : 7 9 16 3 18 
+Here is the sampling : 14 17 6 3 15 
+Here is the sampling : 20 14 6 18 17 
+Here is the sampling : 6 1 13 20 11 
+Here is the sampling : 18 8 7 13 4 
+Here is the sampling : 10 17 18 7 5 
+Here is the sampling : 14 18 2 12 20 
+Here is the sampling : 8 5 2 17 18 
+Here is the sampling : 12 7 2 10 17 
+Here is the sampling : 18 6 12 19 13 
+Here is the sampling : 8 9 7 3 4 
+Here is the sampling : 15 17 18 5 4 
+Here is the sampling : 16 17 2 3 18 
+Here is the sampling : 0 6 9 3 20 
+Here is the sampling : 10 9 17 5 14 
+Here is the sampling : 7 1 11 20 8 
+Here is the sampling : 14 9 5 10 15 
+Here is the sampling : 0 14 11 7 4 
+Here is the sampling : 0 10 5 3 12 
+Here is the sampling : 16 8 2 3 11 
+Here is the sampling : 20 1 11 15 5 
+Here is the sampling : 0 16 2 17 10 
+Here is the sampling : 11 10 9 20 17 
+Here is the sampling : 0 7 18 6 12 
+Here is the sampling : 17 7 13 3 11 
+Here is the sampling : 0 12 9 20 4 
+Here is the sampling : 0 19 10 14 6 
+Here is the sampling : 11 7 8 18 14 
+Here is the sampling : 17 1 2 6 5 
+Here is the sampling : 17 1 2 18 16 
+Here is the sampling : 11 1 2 15 8 
+Here is the sampling : 9 18 2 3 12 
+Here is the sampling : 11 5 20 13 7 
+Here is the sampling : 0 1 14 9 6 
+Here is the sampling : 14 17 18 20 15 
+Here is the sampling : 13 18 2 19 4 
+Here is the sampling : 11 16 2 3 19 
+Here is the sampling : 10 16 7 12 18 
+Here is the sampling : 0 7 14 3 13 
+Here is the sampling : 0 10 12 3 17 
+Here is the sampling : 6 1 10 5 16 
+Here is the sampling : 20 12 2 11 4 
+Here is the sampling : 11 6 13 15 17 
+Here is the sampling : 0 19 17 3 15 
+Here is the sampling : 6 9 19 12 4 
+Here is the sampling : 19 18 2 17 8 
+Here is the sampling : 18 7 13 3 5 
+Here is the sampling : 14 1 2 5 6 
+Here is the sampling : 8 1 7 19 14 
+Here is the sampling : 19 15 13 6 17 
+Here is the sampling : 5 1 2 3 4 
+Here is the sampling : 10 1 2 6 11 
+Here is the sampling : 0 9 8 3 12 
+Here is the sampling : 13 19 9 15 4 
+Here is the sampling : 0 1 16 11 13 
+Here is the sampling : 18 8 10 20 19 
+Here is the sampling : 13 11 20 17 9 
+Here is the sampling : 11 17 20 5 13 
+Here is the sampling : 12 18 2 16 4 
+Here is the sampling : 11 9 7 6 14 
+Here is the sampling : 15 6 19 3 20 
+Here is the sampling : 18 19 2 12 17 
+Here is the sampling : 9 14 11 3 19 
+Here is the sampling : 10 15 18 13 4 
+Here is the sampling : 17 19 14 9 4 
+Here is the sampling : 18 1 11 12 14 
+Here is the sampling : 12 1 13 3 5 
+Here is the sampling : 9 10 6 8 4 
+Here is the sampling : 15 11 5 12 6 
+Here is the sampling : 0 12 2 11 5 
+Here is the sampling : 0 15 2 6 18 
+Here is the sampling : 0 10 18 5 17 
+Here is the sampling : 17 18 14 9 10 
+Here is the sampling : 13 12 8 11 14 
+Here is the sampling : 14 9 15 5 4 
+Here is the sampling : 9 11 13 3 6 
+Here is the sampling : 19 12 17 5 4 
+Here is the sampling : 15 6 7 3 4 
+Here is the sampling : 14 11 16 13 10 
+Here is the sampling : 11 10 16 3 15 
+Here is the sampling : 19 13 11 9 4 
+Here is the sampling : 14 20 2 3 17 
+Here is the sampling : 0 1 15 7 14 
+Here is the sampling : 20 12 2 6 19 
+Here is the sampling : 11 15 20 16 4 
+Here is the sampling : 13 18 2 5 17 
+Here is the sampling : 0 1 5 19 18 
+Here is the sampling : 16 1 2 9 18 
+Here is the sampling : 17 14 8 3 4 
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 12.8 KB, free 80.7 MB)
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 2.1 KB, free 80.7 MB)
+18/06/05 17:18:05 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.17.9.20:34557 (size: 2.1 KB, free: 159.6 MB)
+18/06/05 17:18:05 INFO SparkContext: Created broadcast 9 from broadcast at RandomForest.scala:515
+18/06/05 17:18:05 INFO SparkContext: Starting job: collectAsMap at RandomForest.scala:565
+18/06/05 17:18:05 INFO DAGScheduler: Registering RDD 21 (mapPartitions at RandomForest.scala:536)
+18/06/05 17:18:05 INFO DAGScheduler: Got job 5 (collectAsMap at RandomForest.scala:565) with 3 output partitions
+18/06/05 17:18:05 INFO DAGScheduler: Final stage: ResultStage 8 (collectAsMap at RandomForest.scala:565)
+18/06/05 17:18:05 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+18/06/05 17:18:05 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 7)
+18/06/05 17:18:05 INFO DAGScheduler: Submitting ShuffleMapStage 7 (MapPartitionsRDD[21] at mapPartitions at RandomForest.scala:536), which has no missing parents
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 46.8 KB, free 80.6 MB)
+18/06/05 17:18:05 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 20.2 KB, free 80.6 MB)
+18/06/05 17:18:05 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.17.9.20:34557 (size: 20.2 KB, free: 159.6 MB)
+18/06/05 17:18:05 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:05 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 7 (MapPartitionsRDD[21] at mapPartitions at RandomForest.scala:536) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:05 INFO TaskSchedulerImpl: Adding task set 7.0 with 3 tasks
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 19, localhost, executor driver, partition 0, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 20, localhost, executor driver, partition 1, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:05 INFO TaskSetManager: Starting task 2.0 in stage 7.0 (TID 21, localhost, executor driver, partition 2, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:05 INFO Executor: Running task 0.0 in stage 7.0 (TID 19)
+18/06/05 17:18:05 INFO Executor: Running task 2.0 in stage 7.0 (TID 21)
+18/06/05 17:18:05 INFO Executor: Running task 1.0 in stage 7.0 (TID 20)
+18/06/05 17:18:05 INFO BlockManager: Found block rdd_17_2 locally
+18/06/05 17:18:05 INFO BlockManager: Found block rdd_17_1 locally
+18/06/05 17:18:05 INFO BlockManager: Found block rdd_17_0 locally
+18/06/05 17:18:06 INFO Executor: Finished task 2.0 in stage 7.0 (TID 21). 1154 bytes result sent to driver
+18/06/05 17:18:06 INFO TaskSetManager: Finished task 2.0 in stage 7.0 (TID 21) in 786 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:07 INFO Executor: Finished task 1.0 in stage 7.0 (TID 20). 1154 bytes result sent to driver
+18/06/05 17:18:07 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 20) in 1315 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:07 INFO Executor: Finished task 0.0 in stage 7.0 (TID 19). 1154 bytes result sent to driver
+18/06/05 17:18:07 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 19) in 1380 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:07 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+18/06/05 17:18:07 INFO DAGScheduler: ShuffleMapStage 7 (mapPartitions at RandomForest.scala:536) finished in 1,387 s
+18/06/05 17:18:07 INFO DAGScheduler: looking for newly runnable stages
+18/06/05 17:18:07 INFO DAGScheduler: running: Set()
+18/06/05 17:18:07 INFO DAGScheduler: waiting: Set(ResultStage 8)
+18/06/05 17:18:07 INFO DAGScheduler: failed: Set()
+18/06/05 17:18:07 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[23] at map at RandomForest.scala:555), which has no missing parents
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 25.7 KB, free 80.6 MB)
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 9.6 KB, free 80.6 MB)
+18/06/05 17:18:07 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.17.9.20:34557 (size: 9.6 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:07 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 8 (MapPartitionsRDD[23] at map at RandomForest.scala:555) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:07 INFO TaskSchedulerImpl: Adding task set 8.0 with 3 tasks
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 22, localhost, executor driver, partition 0, ANY, 7649 bytes)
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 23, localhost, executor driver, partition 1, ANY, 7649 bytes)
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 24, localhost, executor driver, partition 2, ANY, 7649 bytes)
+18/06/05 17:18:07 INFO Executor: Running task 0.0 in stage 8.0 (TID 22)
+18/06/05 17:18:07 INFO Executor: Running task 1.0 in stage 8.0 (TID 23)
+18/06/05 17:18:07 INFO Executor: Running task 2.0 in stage 8.0 (TID 24)
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:07 INFO Executor: Finished task 1.0 in stage 8.0 (TID 23). 7625 bytes result sent to driver
+18/06/05 17:18:07 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 23) in 32 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:07 INFO Executor: Finished task 0.0 in stage 8.0 (TID 22). 7847 bytes result sent to driver
+18/06/05 17:18:07 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 22) in 41 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:07 INFO Executor: Finished task 2.0 in stage 8.0 (TID 24). 7642 bytes result sent to driver
+18/06/05 17:18:07 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 24) in 42 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:07 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+18/06/05 17:18:07 INFO DAGScheduler: ResultStage 8 (collectAsMap at RandomForest.scala:565) finished in 0,050 s
+18/06/05 17:18:07 INFO DAGScheduler: Job 5 finished: collectAsMap at RandomForest.scala:565, took 1,442988 s
+Here is the sampling : 16 1 12 11 9 
+Here is the sampling : 19 1 5 17 9 
+Here is the sampling : 0 18 6 12 20 
+Here is the sampling : 6 1 10 5 11 
+Here is the sampling : 0 15 14 11 10 
+Here is the sampling : 19 1 5 3 8 
+Here is the sampling : 15 1 2 8 14 
+Here is the sampling : 9 7 13 15 4 
+Here is the sampling : 7 15 14 3 4 
+Here is the sampling : 10 17 13 3 5 
+Here is the sampling : 14 1 7 6 17 
+Here is the sampling : 0 1 5 11 18 
+Here is the sampling : 6 13 2 18 14 
+Here is the sampling : 0 1 14 20 4 
+Here is the sampling : 8 14 9 3 18 
+Here is the sampling : 10 1 15 18 12 
+Here is the sampling : 13 1 9 16 20 
+Here is the sampling : 6 20 13 9 4 
+Here is the sampling : 0 8 18 15 4 
+Here is the sampling : 0 6 13 3 20 
+Here is the sampling : 9 17 2 3 14 
+Here is the sampling : 13 7 2 16 5 
+Here is the sampling : 0 1 18 13 8 
+Here is the sampling : 13 15 11 19 6 
+Here is the sampling : 10 16 11 13 4 
+Here is the sampling : 5 9 2 18 11 
+Here is the sampling : 20 12 10 14 11 
+Here is the sampling : 18 13 2 3 8 
+Here is the sampling : 16 13 7 6 4 
+Here is the sampling : 6 7 2 9 4 
+Here is the sampling : 10 16 6 17 12 
+Here is the sampling : 0 13 15 20 6 
+Here is the sampling : 0 1 17 15 18 
+Here is the sampling : 11 16 14 17 18 
+Here is the sampling : 0 6 2 14 19 
+Here is the sampling : 5 17 10 18 4 
+Here is the sampling : 14 1 5 3 10 
+Here is the sampling : 9 19 5 3 8 
+Here is the sampling : 20 14 2 12 7 
+Here is the sampling : 12 16 2 3 4 
+Here is the sampling : 0 16 2 3 4 
+Here is the sampling : 13 10 7 6 16 
+Here is the sampling : 6 8 14 11 20 
+Here is the sampling : 0 5 12 11 4 
+Here is the sampling : 0 16 2 19 6 
+Here is the sampling : 9 5 13 7 4 
+Here is the sampling : 0 14 17 20 4 
+Here is the sampling : 0 16 2 7 11 
+Here is the sampling : 13 12 14 3 8 
+Here is the sampling : 11 1 2 20 12 
+Here is the sampling : 19 14 2 9 4 
+Here is the sampling : 6 5 9 19 4 
+Here is the sampling : 5 1 12 14 7 
+Here is the sampling : 14 1 15 19 4 
+Here is the sampling : 13 8 7 10 4 
+Here is the sampling : 12 13 18 3 4 
+Here is the sampling : 6 1 19 11 17 
+Here is the sampling : 20 17 6 15 7 
+Here is the sampling : 0 17 15 8 9 
+Here is the sampling : 20 1 9 18 5 
+Here is the sampling : 17 15 2 10 4 
+Here is the sampling : 8 17 14 18 12 
+Here is the sampling : 12 9 15 3 5 
+Here is the sampling : 7 13 20 3 9 
+Here is the sampling : 9 5 12 3 13 
+Here is the sampling : 16 15 9 8 4 
+Here is the sampling : 11 1 2 18 14 
+Here is the sampling : 15 19 2 3 6 
+Here is the sampling : 18 17 14 12 4 
+Here is the sampling : 18 1 14 17 7 
+Here is the sampling : 8 1 5 3 16 
+Here is the sampling : 12 9 16 3 17 
+Here is the sampling : 0 11 12 3 17 
+Here is the sampling : 19 20 16 3 15 
+Here is the sampling : 14 1 2 15 17 
+Here is the sampling : 0 17 6 8 4 
+Here is the sampling : 20 13 15 7 12 
+Here is the sampling : 7 1 6 3 14 
+Here is the sampling : 0 11 2 3 17 
+Here is the sampling : 8 1 11 3 4 
+Here is the sampling : 0 17 12 3 10 
+Here is the sampling : 0 19 18 12 17 
+Here is the sampling : 18 17 2 3 19 
+Here is the sampling : 11 17 7 20 4 
+Here is the sampling : 18 12 2 7 17 
+Here is the sampling : 8 11 18 16 4 
+Here is the sampling : 0 5 2 8 4 
+Here is the sampling : 0 7 14 3 4 
+Here is the sampling : 11 17 2 3 5 
+Here is the sampling : 0 16 6 20 19 
+Here is the sampling : 12 1 14 8 4 
+Here is the sampling : 10 1 14 12 20 
+Here is the sampling : 7 11 16 3 18 
+Here is the sampling : 15 17 11 10 4 
+Here is the sampling : 18 5 2 10 17 
+Here is the sampling : 0 1 13 8 17 
+Here is the sampling : 14 20 2 3 18 
+Here is the sampling : 0 20 2 3 16 
+Here is the sampling : 0 6 2 3 19 
+Here is the sampling : 0 18 9 15 4 
+Here is the sampling : 9 17 15 18 16 
+Here is the sampling : 0 10 2 14 11 
+Here is the sampling : 20 13 19 5 17 
+Here is the sampling : 16 1 19 14 7 
+Here is the sampling : 15 12 10 14 5 
+Here is the sampling : 0 9 8 5 14 
+Here is the sampling : 0 10 17 14 6 
+Here is the sampling : 12 10 7 18 6 
+Here is the sampling : 5 19 20 14 15 
+Here is the sampling : 19 16 17 3 7 
+Here is the sampling : 17 11 12 3 6 
+Here is the sampling : 10 20 17 19 15 
+Here is the sampling : 17 15 16 14 4 
+Here is the sampling : 20 14 7 17 4 
+Here is the sampling : 15 12 17 3 11 
+Here is the sampling : 7 1 6 3 12 
+Here is the sampling : 7 8 11 3 4 
+Here is the sampling : 8 14 19 3 16 
+Here is the sampling : 0 15 17 3 8 
+Here is the sampling : 6 1 16 3 18 
+Here is the sampling : 13 10 15 18 4 
+Here is the sampling : 13 12 14 20 4 
+Here is the sampling : 7 11 2 10 8 
+Here is the sampling : 20 15 2 7 9 
+Here is the sampling : 6 1 20 19 8 
+Here is the sampling : 5 19 2 12 17 
+Here is the sampling : 17 1 20 9 6 
+Here is the sampling : 19 6 2 3 9 
+Here is the sampling : 13 1 15 10 14 
+Here is the sampling : 6 16 20 9 4 
+Here is the sampling : 19 8 7 18 20 
+Here is the sampling : 13 16 10 17 4 
+Here is the sampling : 0 11 17 14 4 
+Here is the sampling : 6 14 8 20 19 
+Here is the sampling : 16 8 17 19 4 
+Here is the sampling : 16 6 12 18 7 
+Here is the sampling : 12 1 14 10 19 
+Here is the sampling : 19 14 11 3 5 
+Here is the sampling : 19 11 2 13 5 
+Here is the sampling : 16 5 13 8 12 
+Here is the sampling : 7 18 16 20 4 
+Here is the sampling : 13 9 10 18 17 
+Here is the sampling : 0 9 6 15 4 
+Here is the sampling : 7 15 12 3 20 
+Here is the sampling : 0 14 8 9 12 
+Here is the sampling : 7 17 5 3 4 
+Here is the sampling : 0 13 15 7 4 
+Here is the sampling : 7 5 16 6 4 
+Here is the sampling : 9 13 19 3 7 
+Here is the sampling : 14 20 7 18 4 
+Here is the sampling : 9 5 18 15 4 
+Here is the sampling : 20 11 9 3 14 
+Here is the sampling : 8 12 14 3 15 
+Here is the sampling : 14 9 10 8 19 
+Here is the sampling : 0 5 8 9 14 
+Here is the sampling : 10 7 18 16 17 
+Here is the sampling : 9 14 15 13 12 
+Here is the sampling : 8 1 5 16 12 
+Here is the sampling : 12 8 14 11 16 
+Here is the sampling : 16 20 2 9 18 
+Here is the sampling : 0 1 6 12 18 
+Here is the sampling : 13 1 20 3 18 
+Here is the sampling : 20 10 15 3 17 
+Here is the sampling : 14 9 2 3 18 
+Here is the sampling : 18 11 2 19 13 
+Here is the sampling : 6 14 11 10 4 
+Here is the sampling : 19 7 15 3 18 
+Here is the sampling : 0 18 2 3 14 
+Here is the sampling : 10 14 7 18 4 
+Here is the sampling : 20 15 2 3 4 
+Here is the sampling : 18 12 10 20 11 
+Here is the sampling : 0 1 7 19 5 
+Here is the sampling : 0 13 2 14 7 
+Here is the sampling : 7 11 15 3 10 
+Here is the sampling : 11 1 10 13 15 
+Here is the sampling : 14 1 17 6 4 
+Here is the sampling : 0 9 2 5 4 
+Here is the sampling : 0 6 18 8 10 
+Here is the sampling : 0 1 8 3 14 
+Here is the sampling : 17 10 13 7 5 
+Here is the sampling : 10 9 6 7 4 
+Here is the sampling : 0 20 5 15 13 
+Here is the sampling : 0 6 19 7 13 
+Here is the sampling : 6 20 14 16 18 
+Here is the sampling : 12 6 14 3 4 
+Here is the sampling : 10 1 2 3 6 
+Here is the sampling : 6 9 2 19 7 
+Here is the sampling : 8 11 15 3 10 
+Here is the sampling : 0 11 19 3 7 
+Here is the sampling : 13 15 7 17 10 
+Here is the sampling : 7 11 13 8 6 
+Here is the sampling : 15 7 9 3 4 
+Here is the sampling : 8 1 10 19 4 
+Here is the sampling : 0 6 2 19 4 
+Here is the sampling : 8 5 19 20 4 
+Here is the sampling : 17 10 20 3 18 
+Here is the sampling : 0 18 8 3 13 
+Here is the sampling : 12 19 2 6 11 
+Here is the sampling : 17 16 9 18 7 
+Here is the sampling : 13 12 15 3 16 
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 24.9 KB, free 80.6 MB)
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 3.8 KB, free 80.6 MB)
+18/06/05 17:18:07 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.17.9.20:34557 (size: 3.8 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO SparkContext: Created broadcast 12 from broadcast at RandomForest.scala:515
+18/06/05 17:18:07 INFO SparkContext: Starting job: collectAsMap at RandomForest.scala:565
+18/06/05 17:18:07 INFO DAGScheduler: Registering RDD 24 (mapPartitions at RandomForest.scala:536)
+18/06/05 17:18:07 INFO DAGScheduler: Got job 6 (collectAsMap at RandomForest.scala:565) with 3 output partitions
+18/06/05 17:18:07 INFO DAGScheduler: Final stage: ResultStage 10 (collectAsMap at RandomForest.scala:565)
+18/06/05 17:18:07 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 9)
+18/06/05 17:18:07 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 9)
+18/06/05 17:18:07 INFO DAGScheduler: Submitting ShuffleMapStage 9 (MapPartitionsRDD[24] at mapPartitions at RandomForest.scala:536), which has no missing parents
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 75.4 KB, free 80.5 MB)
+18/06/05 17:18:07 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 31.5 KB, free 80.5 MB)
+18/06/05 17:18:07 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.17.9.20:34557 (size: 31.5 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:07 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 9 (MapPartitionsRDD[24] at mapPartitions at RandomForest.scala:536) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:07 INFO TaskSchedulerImpl: Adding task set 9.0 with 3 tasks
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 25, localhost, executor driver, partition 0, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 26, localhost, executor driver, partition 1, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:07 INFO TaskSetManager: Starting task 2.0 in stage 9.0 (TID 27, localhost, executor driver, partition 2, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:07 INFO Executor: Running task 0.0 in stage 9.0 (TID 25)
+18/06/05 17:18:07 INFO Executor: Running task 1.0 in stage 9.0 (TID 26)
+18/06/05 17:18:07 INFO Executor: Running task 2.0 in stage 9.0 (TID 27)
+18/06/05 17:18:07 INFO BlockManager: Found block rdd_17_0 locally
+18/06/05 17:18:07 INFO BlockManager: Found block rdd_17_2 locally
+18/06/05 17:18:07 INFO BlockManager: Found block rdd_17_1 locally
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 194
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 214
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned shuffle 2
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 176
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 195
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 192
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 191
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 180
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 209
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 175
+18/06/05 17:18:07 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 172.17.9.20:34557 in memory (size: 20.2 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 215
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 217
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 213
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 216
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 178
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 218
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 211
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 190
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 193
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 206
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 189
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 212
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 187
+18/06/05 17:18:07 INFO BlockManagerInfo: Removed broadcast_11_piece0 on 172.17.9.20:34557 in memory (size: 9.6 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 210
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 207
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 181
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 196
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 220
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 201
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 184
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 208
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 198
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 223
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 224
+18/06/05 17:18:07 INFO BlockManagerInfo: Removed broadcast_9_piece0 on 172.17.9.20:34557 in memory (size: 2.1 KB, free: 159.6 MB)
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 200
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 205
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 222
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 202
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 188
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 179
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 203
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 197
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 219
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 186
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 204
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 221
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 177
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 183
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 185
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 182
+18/06/05 17:18:07 INFO ContextCleaner: Cleaned accumulator 199
+18/06/05 17:18:08 INFO Executor: Finished task 2.0 in stage 9.0 (TID 27). 1154 bytes result sent to driver
+18/06/05 17:18:08 INFO TaskSetManager: Finished task 2.0 in stage 9.0 (TID 27) in 950 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:09 INFO Executor: Finished task 0.0 in stage 9.0 (TID 25). 1154 bytes result sent to driver
+18/06/05 17:18:09 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 25) in 1878 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:09 INFO Executor: Finished task 1.0 in stage 9.0 (TID 26). 1154 bytes result sent to driver
+18/06/05 17:18:09 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 26) in 1940 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:09 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+18/06/05 17:18:09 INFO DAGScheduler: ShuffleMapStage 9 (mapPartitions at RandomForest.scala:536) finished in 1,949 s
+18/06/05 17:18:09 INFO DAGScheduler: looking for newly runnable stages
+18/06/05 17:18:09 INFO DAGScheduler: running: Set()
+18/06/05 17:18:09 INFO DAGScheduler: waiting: Set(ResultStage 10)
+18/06/05 17:18:09 INFO DAGScheduler: failed: Set()
+18/06/05 17:18:09 INFO DAGScheduler: Submitting ResultStage 10 (MapPartitionsRDD[26] at map at RandomForest.scala:555), which has no missing parents
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 34.6 KB, free 80.5 MB)
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 13.1 KB, free 80.5 MB)
+18/06/05 17:18:09 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.17.9.20:34557 (size: 13.1 KB, free: 159.6 MB)
+18/06/05 17:18:09 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:09 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 10 (MapPartitionsRDD[26] at map at RandomForest.scala:555) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:09 INFO TaskSchedulerImpl: Adding task set 10.0 with 3 tasks
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 28, localhost, executor driver, partition 0, ANY, 7649 bytes)
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 29, localhost, executor driver, partition 1, ANY, 7649 bytes)
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 2.0 in stage 10.0 (TID 30, localhost, executor driver, partition 2, ANY, 7649 bytes)
+18/06/05 17:18:09 INFO Executor: Running task 1.0 in stage 10.0 (TID 29)
+18/06/05 17:18:09 INFO Executor: Running task 0.0 in stage 10.0 (TID 28)
+18/06/05 17:18:09 INFO Executor: Running task 2.0 in stage 10.0 (TID 30)
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:09 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:09 INFO BlockManagerInfo: Removed broadcast_13_piece0 on 172.17.9.20:34557 in memory (size: 31.5 KB, free: 159.6 MB)
+18/06/05 17:18:09 INFO Executor: Finished task 1.0 in stage 10.0 (TID 29). 13911 bytes result sent to driver
+18/06/05 17:18:09 INFO Executor: Finished task 2.0 in stage 10.0 (TID 30). 13656 bytes result sent to driver
+18/06/05 17:18:09 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 29) in 55 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:09 INFO TaskSetManager: Finished task 2.0 in stage 10.0 (TID 30) in 55 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:09 INFO Executor: Finished task 0.0 in stage 10.0 (TID 28). 13790 bytes result sent to driver
+18/06/05 17:18:09 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 28) in 67 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:09 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+18/06/05 17:18:09 INFO DAGScheduler: ResultStage 10 (collectAsMap at RandomForest.scala:565) finished in 0,074 s
+18/06/05 17:18:09 INFO DAGScheduler: Job 6 finished: collectAsMap at RandomForest.scala:565, took 2,028455 s
+Here is the sampling : 8 12 2 14 20 
+Here is the sampling : 11 10 17 5 7 
+Here is the sampling : 8 13 2 6 9 
+Here is the sampling : 12 17 2 15 4 
+Here is the sampling : 5 15 14 16 4 
+Here is the sampling : 8 10 5 6 7 
+Here is the sampling : 16 6 13 19 15 
+Here is the sampling : 16 18 8 20 5 
+Here is the sampling : 9 17 18 16 10 
+Here is the sampling : 9 14 13 12 4 
+Here is the sampling : 14 20 2 3 15 
+Here is the sampling : 6 1 2 17 4 
+Here is the sampling : 9 19 13 3 14 
+Here is the sampling : 10 15 9 3 4 
+Here is the sampling : 13 18 5 15 4 
+Here is the sampling : 6 13 12 3 4 
+Here is the sampling : 0 7 2 18 5 
+Here is the sampling : 18 1 2 3 7 
+Here is the sampling : 0 1 2 20 4 
+Here is the sampling : 17 10 18 12 6 
+Here is the sampling : 9 10 19 7 4 
+Here is the sampling : 15 18 16 10 17 
+Here is the sampling : 15 13 20 19 4 
+Here is the sampling : 15 14 16 3 7 
+Here is the sampling : 9 1 2 5 18 
+Here is the sampling : 0 1 17 20 16 
+Here is the sampling : 15 19 12 13 4 
+Here is the sampling : 0 5 2 3 17 
+Here is the sampling : 14 7 15 3 16 
+Here is the sampling : 0 9 6 15 12 
+Here is the sampling : 7 5 11 9 16 
+Here is the sampling : 7 8 2 19 9 
+Here is the sampling : 16 1 20 10 13 
+Here is the sampling : 0 1 18 6 15 
+Here is the sampling : 12 6 2 8 5 
+Here is the sampling : 0 5 2 3 4 
+Here is the sampling : 20 1 9 16 6 
+Here is the sampling : 18 5 10 19 4 
+Here is the sampling : 17 1 2 12 16 
+Here is the sampling : 20 19 14 9 15 
+Here is the sampling : 17 15 6 13 14 
+Here is the sampling : 19 14 2 12 6 
+Here is the sampling : 7 1 19 8 4 
+Here is the sampling : 5 14 7 3 10 
+Here is the sampling : 14 16 5 3 7 
+Here is the sampling : 15 16 20 17 18 
+Here is the sampling : 0 1 15 20 4 
+Here is the sampling : 15 7 8 5 6 
+Here is the sampling : 6 18 5 7 20 
+Here is the sampling : 5 14 6 9 8 
+Here is the sampling : 13 1 7 10 8 
+Here is the sampling : 10 13 2 7 11 
+Here is the sampling : 0 13 6 3 20 
+Here is the sampling : 7 1 17 9 5 
+Here is the sampling : 0 17 16 19 15 
+Here is the sampling : 5 8 18 3 4 
+Here is the sampling : 10 1 8 19 9 
+Here is the sampling : 14 7 2 16 20 
+Here is the sampling : 6 5 17 11 4 
+Here is the sampling : 17 12 10 5 4 
+Here is the sampling : 0 1 17 6 14 
+Here is the sampling : 14 8 20 7 11 
+Here is the sampling : 13 1 19 20 4 
+Here is the sampling : 0 6 10 7 8 
+Here is the sampling : 7 15 2 12 4 
+Here is the sampling : 0 13 18 14 11 
+Here is the sampling : 19 12 2 13 8 
+Here is the sampling : 0 7 18 19 16 
+Here is the sampling : 7 10 2 3 18 
+Here is the sampling : 15 16 2 7 14 
+Here is the sampling : 5 13 20 8 15 
+Here is the sampling : 15 7 2 19 9 
+Here is the sampling : 15 12 2 11 9 
+Here is the sampling : 5 1 2 9 4 
+Here is the sampling : 7 1 2 6 19 
+Here is the sampling : 0 17 10 14 6 
+Here is the sampling : 0 11 8 16 17 
+Here is the sampling : 10 6 18 7 19 
+Here is the sampling : 6 13 20 18 14 
+Here is the sampling : 0 13 6 8 10 
+Here is the sampling : 0 1 14 13 19 
+Here is the sampling : 13 17 9 3 15 
+Here is the sampling : 0 15 2 11 12 
+Here is the sampling : 0 15 20 12 9 
+Here is the sampling : 13 19 2 5 14 
+Here is the sampling : 15 17 2 3 8 
+Here is the sampling : 7 1 9 16 6 
+Here is the sampling : 8 1 2 3 18 
+Here is the sampling : 18 13 6 3 11 
+Here is the sampling : 0 16 2 19 20 
+Here is the sampling : 8 11 7 10 16 
+Here is the sampling : 13 8 15 12 9 
+Here is the sampling : 7 6 15 8 17 
+Here is the sampling : 17 19 16 3 7 
+Here is the sampling : 6 20 2 9 11 
+Here is the sampling : 0 17 5 12 11 
+Here is the sampling : 10 9 8 17 20 
+Here is the sampling : 9 7 10 14 19 
+Here is the sampling : 13 18 19 3 7 
+Here is the sampling : 18 1 2 10 16 
+Here is the sampling : 5 1 14 17 4 
+Here is the sampling : 7 11 2 18 19 
+Here is the sampling : 13 17 20 5 16 
+Here is the sampling : 7 17 5 3 4 
+Here is the sampling : 0 15 11 19 4 
+Here is the sampling : 12 17 2 3 7 
+Here is the sampling : 0 10 6 3 15 
+Here is the sampling : 0 5 17 16 4 
+Here is the sampling : 0 12 11 17 18 
+Here is the sampling : 0 8 15 18 7 
+Here is the sampling : 5 1 2 19 8 
+Here is the sampling : 0 16 8 3 7 
+Here is the sampling : 19 8 2 15 4 
+Here is the sampling : 20 5 11 16 19 
+Here is the sampling : 6 5 10 18 20 
+Here is the sampling : 18 9 2 3 10 
+Here is the sampling : 14 1 11 13 7 
+Here is the sampling : 11 16 8 3 19 
+Here is the sampling : 15 17 14 20 10 
+Here is the sampling : 0 15 2 3 4 
+Here is the sampling : 5 10 2 3 4 
+Here is the sampling : 11 1 10 8 12 
+Here is the sampling : 14 6 2 17 11 
+Here is the sampling : 9 5 2 20 16 
+Here is the sampling : 15 19 2 3 10 
+Here is the sampling : 7 15 11 13 18 
+Here is the sampling : 12 9 6 3 4 
+Here is the sampling : 0 19 10 14 13 
+Here is the sampling : 12 6 20 5 11 
+Here is the sampling : 20 9 12 8 19 
+Here is the sampling : 17 16 8 6 4 
+Here is the sampling : 13 17 2 16 4 
+Here is the sampling : 0 18 5 9 17 
+Here is the sampling : 0 13 2 20 7 
+Here is the sampling : 20 9 5 3 12 
+Here is the sampling : 5 13 7 20 4 
+Here is the sampling : 18 15 8 19 6 
+Here is the sampling : 0 15 18 3 4 
+Here is the sampling : 0 7 14 3 8 
+Here is the sampling : 0 1 2 8 16 
+Here is the sampling : 17 1 9 3 10 
+Here is the sampling : 14 17 2 3 10 
+Here is the sampling : 19 8 7 16 12 
+Here is the sampling : 0 18 8 3 10 
+Here is the sampling : 0 12 13 19 6 
+Here is the sampling : 14 11 8 17 18 
+Here is the sampling : 14 6 11 3 15 
+Here is the sampling : 0 10 17 9 8 
+Here is the sampling : 0 1 12 13 14 
+Here is the sampling : 20 1 18 3 4 
+Here is the sampling : 15 18 20 8 10 
+Here is the sampling : 14 5 18 16 4 
+Here is the sampling : 15 13 2 18 11 
+Here is the sampling : 20 1 7 14 4 
+Here is the sampling : 20 15 8 13 17 
+Here is the sampling : 0 13 11 20 4 
+Here is the sampling : 18 6 2 19 20 
+Here is the sampling : 15 1 17 20 11 
+Here is the sampling : 20 11 17 18 8 
+Here is the sampling : 5 20 18 9 17 
+Here is the sampling : 13 6 2 16 17 
+Here is the sampling : 14 13 11 9 4 
+Here is the sampling : 8 11 2 14 12 
+Here is the sampling : 16 1 7 10 14 
+Here is the sampling : 0 18 2 20 17 
+Here is the sampling : 12 14 19 17 10 
+Here is the sampling : 8 1 12 13 7 
+Here is the sampling : 0 11 2 15 16 
+Here is the sampling : 8 18 2 9 13 
+Here is the sampling : 14 7 15 10 16 
+Here is the sampling : 10 6 12 5 4 
+Here is the sampling : 16 1 19 14 10 
+Here is the sampling : 7 18 17 12 14 
+Here is the sampling : 5 1 6 8 14 
+Here is the sampling : 20 8 14 3 5 
+Here is the sampling : 0 5 12 17 14 
+Here is the sampling : 10 1 2 20 17 
+Here is the sampling : 15 7 2 16 20 
+Here is the sampling : 20 6 15 18 4 
+Here is the sampling : 14 9 2 18 4 
+Here is the sampling : 0 15 6 3 13 
+Here is the sampling : 18 11 6 3 8 
+Here is the sampling : 20 8 17 3 13 
+Here is the sampling : 11 1 20 3 4 
+Here is the sampling : 10 7 2 19 8 
+Here is the sampling : 0 8 13 3 14 
+Here is the sampling : 0 15 14 19 4 
+Here is the sampling : 9 17 12 14 19 
+Here is the sampling : 12 1 20 3 7 
+Here is the sampling : 19 1 11 3 7 
+Here is the sampling : 17 8 16 3 12 
+Here is the sampling : 9 1 13 3 18 
+Here is the sampling : 6 1 2 10 18 
+Here is the sampling : 19 15 13 12 4 
+Here is the sampling : 18 19 2 3 9 
+Here is the sampling : 6 1 2 5 14 
+Here is the sampling : 19 9 15 18 10 
+Here is the sampling : 17 20 8 3 15 
+Here is the sampling : 12 13 15 18 8 
+Here is the sampling : 20 1 18 16 7 
+Here is the sampling : 5 18 2 8 14 
+Here is the sampling : 0 8 9 3 12 
+Here is the sampling : 14 18 2 3 7 
+Here is the sampling : 16 5 11 18 17 
+Here is the sampling : 15 13 17 6 9 
+Here is the sampling : 14 20 6 9 7 
+Here is the sampling : 18 11 15 3 7 
+Here is the sampling : 17 11 14 8 15 
+Here is the sampling : 14 1 5 12 13 
+Here is the sampling : 8 10 9 3 12 
+Here is the sampling : 20 1 2 15 19 
+Here is the sampling : 15 17 14 3 9 
+Here is the sampling : 18 16 11 3 20 
+Here is the sampling : 20 18 6 3 14 
+Here is the sampling : 11 12 20 3 4 
+Here is the sampling : 0 11 19 15 18 
+Here is the sampling : 0 8 9 18 13 
+Here is the sampling : 0 14 7 13 9 
+Here is the sampling : 0 1 2 3 14 
+Here is the sampling : 7 8 11 3 4 
+Here is the sampling : 0 20 16 12 5 
+Here is the sampling : 7 1 12 3 4 
+Here is the sampling : 5 6 8 13 9 
+Here is the sampling : 0 1 9 16 20 
+Here is the sampling : 11 6 19 3 5 
+Here is the sampling : 0 11 6 7 17 
+Here is the sampling : 20 13 15 3 7 
+Here is the sampling : 20 19 2 11 8 
+Here is the sampling : 15 19 2 9 5 
+Here is the sampling : 0 1 17 20 5 
+Here is the sampling : 20 1 2 15 11 
+Here is the sampling : 0 20 2 15 18 
+Here is the sampling : 15 9 2 20 12 
+Here is the sampling : 6 12 5 8 4 
+Here is the sampling : 19 13 10 3 9 
+Here is the sampling : 5 18 10 17 4 
+Here is the sampling : 5 20 17 3 4 
+Here is the sampling : 9 6 14 5 4 
+Here is the sampling : 11 12 2 3 13 
+Here is the sampling : 5 20 2 16 17 
+Here is the sampling : 19 1 17 15 16 
+Here is the sampling : 0 18 13 10 4 
+Here is the sampling : 6 1 12 20 18 
+Here is the sampling : 19 11 8 3 13 
+Here is the sampling : 7 11 17 3 6 
+Here is the sampling : 20 15 2 7 4 
+Here is the sampling : 19 1 15 12 16 
+Here is the sampling : 14 1 12 7 18 
+Here is the sampling : 0 11 5 18 4 
+Here is the sampling : 11 13 18 16 4 
+Here is the sampling : 15 13 11 7 4 
+Here is the sampling : 18 14 19 17 5 
+Here is the sampling : 7 12 18 3 4 
+Here is the sampling : 12 20 7 13 10 
+Here is the sampling : 18 10 2 7 19 
+Here is the sampling : 0 1 5 8 15 
+Here is the sampling : 18 11 12 3 20 
+Here is the sampling : 7 9 2 14 4 
+Here is the sampling : 7 13 6 15 20 
+Here is the sampling : 6 1 2 20 19 
+Here is the sampling : 13 12 11 5 4 
+Here is the sampling : 17 8 2 5 9 
+Here is the sampling : 0 5 20 16 17 
+Here is the sampling : 10 8 17 3 18 
+Here is the sampling : 20 12 2 8 4 
+Here is the sampling : 8 1 2 3 9 
+Here is the sampling : 18 9 7 6 4 
+Here is the sampling : 13 7 2 17 4 
+Here is the sampling : 6 16 13 20 4 
+Here is the sampling : 18 17 2 14 4 
+Here is the sampling : 13 15 14 16 4 
+Here is the sampling : 20 12 17 3 6 
+Here is the sampling : 8 6 2 3 19 
+Here is the sampling : 12 8 16 15 10 
+Here is the sampling : 18 20 11 3 15 
+Here is the sampling : 5 20 6 3 8 
+Here is the sampling : 6 1 19 5 9 
+Here is the sampling : 15 1 2 11 16 
+Here is the sampling : 6 18 9 14 7 
+Here is the sampling : 17 15 6 12 9 
+Here is the sampling : 17 10 18 15 4 
+Here is the sampling : 9 1 18 3 4 
+Here is the sampling : 9 7 2 16 6 
+Here is the sampling : 0 17 10 3 8 
+Here is the sampling : 0 1 10 13 17 
+Here is the sampling : 10 7 20 11 13 
+Here is the sampling : 8 14 2 10 13 
+Here is the sampling : 17 9 7 16 4 
+Here is the sampling : 0 17 18 12 15 
+Here is the sampling : 13 1 20 9 4 
+Here is the sampling : 6 8 12 17 4 
+Here is the sampling : 14 7 6 11 4 
+Here is the sampling : 7 5 9 15 16 
+Here is the sampling : 0 1 9 20 11 
+Here is the sampling : 7 12 16 9 17 
+Here is the sampling : 9 6 13 10 4 
+Here is the sampling : 14 17 2 3 8 
+Here is the sampling : 18 1 19 14 5 
+Here is the sampling : 12 14 2 20 4 
+Here is the sampling : 11 12 15 10 6 
+Here is the sampling : 0 13 6 9 20 
+Here is the sampling : 8 18 12 16 4 
+Here is the sampling : 0 5 13 14 4 
+Here is the sampling : 17 16 12 3 4 
+Here is the sampling : 14 13 16 10 11 
+Here is the sampling : 7 1 2 3 20 
+Here is the sampling : 12 1 14 18 4 
+Here is the sampling : 5 18 2 3 20 
+Here is the sampling : 5 1 18 19 14 
+Here is the sampling : 14 1 2 3 9 
+Here is the sampling : 10 1 6 5 17 
+Here is the sampling : 19 1 8 15 7 
+Here is the sampling : 10 16 2 3 5 
+Here is the sampling : 17 1 9 16 19 
+Here is the sampling : 12 18 20 14 19 
+Here is the sampling : 19 17 12 18 16 
+Here is the sampling : 11 14 20 13 4 
+Here is the sampling : 18 9 16 3 14 
+Here is the sampling : 16 19 2 3 10 
+Here is the sampling : 18 5 2 15 8 
+Here is the sampling : 0 5 2 3 11 
+Here is the sampling : 10 11 20 3 4 
+Here is the sampling : 17 14 16 5 4 
+Here is the sampling : 13 18 19 3 17 
+Here is the sampling : 0 12 20 5 16 
+Here is the sampling : 10 12 16 5 14 
+Here is the sampling : 7 6 2 8 10 
+Here is the sampling : 8 12 7 17 4 
+Here is the sampling : 15 6 8 7 11 
+Here is the sampling : 7 1 2 3 13 
+Here is the sampling : 18 9 15 3 13 
+Here is the sampling : 6 1 20 13 4 
+Here is the sampling : 8 7 13 16 4 
+Here is the sampling : 15 1 2 13 18 
+Here is the sampling : 10 17 6 3 11 
+Here is the sampling : 7 9 13 12 15 
+Here is the sampling : 16 1 6 13 10 
+Here is the sampling : 6 1 2 19 17 
+Here is the sampling : 5 9 7 17 10 
+Here is the sampling : 0 17 16 11 4 
+Here is the sampling : 0 12 20 14 10 
+Here is the sampling : 8 18 7 14 12 
+Here is the sampling : 16 11 18 10 8 
+Here is the sampling : 14 1 17 19 10 
+Here is the sampling : 0 6 9 20 17 
+Here is the sampling : 9 1 18 11 7 
+Here is the sampling : 18 8 14 6 4 
+Here is the sampling : 8 19 11 3 5 
+Here is the sampling : 5 6 11 3 10 
+Here is the sampling : 0 14 6 11 16 
+Here is the sampling : 8 17 13 6 15 
+Here is the sampling : 16 5 2 18 11 
+Here is the sampling : 16 17 2 9 19 
+Here is the sampling : 6 9 8 15 19 
+Here is the sampling : 7 13 17 20 18 
+Here is the sampling : 5 7 10 17 4 
+Here is the sampling : 20 12 16 7 5 
+Here is the sampling : 18 1 2 3 8 
+Here is the sampling : 6 14 17 3 4 
+Here is the sampling : 13 20 11 12 15 
+Here is the sampling : 0 1 19 5 4 
+Here is the sampling : 18 16 13 20 6 
+Here is the sampling : 13 6 10 3 17 
+Here is the sampling : 20 6 9 12 5 
+Here is the sampling : 10 14 15 19 13 
+Here is the sampling : 10 16 17 6 15 
+Here is the sampling : 8 1 6 13 4 
+Here is the sampling : 13 15 9 3 4 
+Here is the sampling : 12 9 2 6 20 
+Here is the sampling : 15 20 8 10 17 
+Here is the sampling : 12 5 2 8 11 
+Here is the sampling : 18 10 12 7 11 
+Here is the sampling : 14 12 19 3 7 
+Here is the sampling : 18 15 2 11 10 
+Here is the sampling : 0 7 17 3 20 
+Here is the sampling : 14 16 13 12 4 
+Here is the sampling : 8 1 13 3 14 
+Here is the sampling : 10 7 19 9 17 
+Here is the sampling : 19 11 9 15 20 
+Here is the sampling : 9 1 16 3 18 
+Here is the sampling : 9 20 13 14 5 
+Here is the sampling : 17 7 5 19 4 
+Here is the sampling : 6 9 20 18 10 
+Here is the sampling : 8 7 2 3 9 
+Here is the sampling : 0 1 2 7 6 
+Here is the sampling : 12 8 7 3 15 
+Here is the sampling : 11 8 18 19 16 
+Here is the sampling : 11 9 2 10 13 
+Here is the sampling : 0 8 2 6 18 
+Here is the sampling : 12 1 16 19 7 
+Here is the sampling : 11 5 18 14 4 
+Here is the sampling : 9 1 15 6 4 
+Here is the sampling : 11 20 2 14 16 
+Here is the sampling : 5 19 2 3 4 
+Here is the sampling : 19 5 16 11 7 
+Here is the sampling : 10 1 12 9 18 
+Here is the sampling : 0 12 2 18 7 
+Here is the sampling : 18 17 8 7 12 
+Here is the sampling : 5 13 8 16 11 
+Here is the sampling : 0 14 15 17 5 
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 50.0 KB, free 80.6 MB)
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 7.4 KB, free 80.6 MB)
+18/06/05 17:18:09 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.17.9.20:34557 (size: 7.4 KB, free: 159.6 MB)
+18/06/05 17:18:09 INFO SparkContext: Created broadcast 15 from broadcast at RandomForest.scala:515
+18/06/05 17:18:09 INFO SparkContext: Starting job: collectAsMap at RandomForest.scala:565
+18/06/05 17:18:09 INFO DAGScheduler: Registering RDD 27 (mapPartitions at RandomForest.scala:536)
+18/06/05 17:18:09 INFO DAGScheduler: Got job 7 (collectAsMap at RandomForest.scala:565) with 3 output partitions
+18/06/05 17:18:09 INFO DAGScheduler: Final stage: ResultStage 12 (collectAsMap at RandomForest.scala:565)
+18/06/05 17:18:09 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 11)
+18/06/05 17:18:09 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 11)
+18/06/05 17:18:09 INFO DAGScheduler: Submitting ShuffleMapStage 11 (MapPartitionsRDD[27] at mapPartitions at RandomForest.scala:536), which has no missing parents
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 132.9 KB, free 80.4 MB)
+18/06/05 17:18:09 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 54.8 KB, free 80.4 MB)
+18/06/05 17:18:09 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on 172.17.9.20:34557 (size: 54.8 KB, free: 159.6 MB)
+18/06/05 17:18:09 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:09 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 11 (MapPartitionsRDD[27] at mapPartitions at RandomForest.scala:536) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:09 INFO TaskSchedulerImpl: Adding task set 11.0 with 3 tasks
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 31, localhost, executor driver, partition 0, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 1.0 in stage 11.0 (TID 32, localhost, executor driver, partition 1, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:09 INFO TaskSetManager: Starting task 2.0 in stage 11.0 (TID 33, localhost, executor driver, partition 2, PROCESS_LOCAL, 7889 bytes)
+18/06/05 17:18:09 INFO Executor: Running task 2.0 in stage 11.0 (TID 33)
+18/06/05 17:18:09 INFO Executor: Running task 0.0 in stage 11.0 (TID 31)
+18/06/05 17:18:09 INFO Executor: Running task 1.0 in stage 11.0 (TID 32)
+18/06/05 17:18:09 INFO BlockManager: Found block rdd_17_1 locally
+18/06/05 17:18:09 INFO BlockManager: Found block rdd_17_2 locally
+18/06/05 17:18:09 INFO BlockManager: Found block rdd_17_0 locally
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 232
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 235
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 263
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 271
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 273
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 272
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 226
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 266
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 238
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 274
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 251
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 245
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 246
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 230
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 270
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned shuffle 3
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 256
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 240
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 249
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 236
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 258
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 267
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 229
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 227
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 265
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 255
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 260
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 243
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 237
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 250
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 257
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 259
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 244
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 248
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 261
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 231
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 225
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 262
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 264
+18/06/05 17:18:10 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.17.9.20:34557 in memory (size: 13.1 KB, free: 159.6 MB)
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 228
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 268
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 234
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 239
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 241
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 269
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 247
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 253
+18/06/05 17:18:10 INFO BlockManagerInfo: Removed broadcast_12_piece0 on 172.17.9.20:34557 in memory (size: 3.8 KB, free: 159.6 MB)
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 252
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 233
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 242
+18/06/05 17:18:10 INFO ContextCleaner: Cleaned accumulator 254
+18/06/05 17:18:10 INFO Executor: Finished task 2.0 in stage 11.0 (TID 33). 1154 bytes result sent to driver
+18/06/05 17:18:10 INFO TaskSetManager: Finished task 2.0 in stage 11.0 (TID 33) in 1473 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:12 INFO Executor: Finished task 0.0 in stage 11.0 (TID 31). 1154 bytes result sent to driver
+18/06/05 17:18:12 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 31) in 2559 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:12 INFO Executor: Finished task 1.0 in stage 11.0 (TID 32). 1154 bytes result sent to driver
+18/06/05 17:18:12 INFO TaskSetManager: Finished task 1.0 in stage 11.0 (TID 32) in 2674 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:12 INFO TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+18/06/05 17:18:12 INFO DAGScheduler: ShuffleMapStage 11 (mapPartitions at RandomForest.scala:536) finished in 2,682 s
+18/06/05 17:18:12 INFO DAGScheduler: looking for newly runnable stages
+18/06/05 17:18:12 INFO DAGScheduler: running: Set()
+18/06/05 17:18:12 INFO DAGScheduler: waiting: Set(ResultStage 12)
+18/06/05 17:18:12 INFO DAGScheduler: failed: Set()
+18/06/05 17:18:12 INFO DAGScheduler: Submitting ResultStage 12 (MapPartitionsRDD[29] at map at RandomForest.scala:555), which has no missing parents
+18/06/05 17:18:12 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 52.4 KB, free 80.4 MB)
+18/06/05 17:18:12 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 19.0 KB, free 80.4 MB)
+18/06/05 17:18:12 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on 172.17.9.20:34557 (size: 19.0 KB, free: 159.6 MB)
+18/06/05 17:18:12 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:12 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 12 (MapPartitionsRDD[29] at map at RandomForest.scala:555) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:12 INFO TaskSchedulerImpl: Adding task set 12.0 with 3 tasks
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 34, localhost, executor driver, partition 0, ANY, 7649 bytes)
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 1.0 in stage 12.0 (TID 35, localhost, executor driver, partition 1, ANY, 7649 bytes)
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 2.0 in stage 12.0 (TID 36, localhost, executor driver, partition 2, ANY, 7649 bytes)
+18/06/05 17:18:12 INFO Executor: Running task 2.0 in stage 12.0 (TID 36)
+18/06/05 17:18:12 INFO Executor: Running task 1.0 in stage 12.0 (TID 35)
+18/06/05 17:18:12 INFO Executor: Running task 0.0 in stage 12.0 (TID 34)
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+18/06/05 17:18:12 INFO BlockManagerInfo: Removed broadcast_16_piece0 on 172.17.9.20:34557 in memory (size: 54.8 KB, free: 159.6 MB)
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+18/06/05 17:18:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+18/06/05 17:18:12 INFO Executor: Finished task 2.0 in stage 12.0 (TID 36). 25680 bytes result sent to driver
+18/06/05 17:18:12 INFO TaskSetManager: Finished task 2.0 in stage 12.0 (TID 36) in 57 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:12 INFO Executor: Finished task 0.0 in stage 12.0 (TID 34). 25917 bytes result sent to driver
+18/06/05 17:18:12 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 34) in 85 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:12 INFO Executor: Finished task 1.0 in stage 12.0 (TID 35). 25576 bytes result sent to driver
+18/06/05 17:18:12 INFO TaskSetManager: Finished task 1.0 in stage 12.0 (TID 35) in 93 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:12 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+18/06/05 17:18:12 INFO DAGScheduler: ResultStage 12 (collectAsMap at RandomForest.scala:565) finished in 0,099 s
+18/06/05 17:18:12 INFO DAGScheduler: Job 7 finished: collectAsMap at RandomForest.scala:565, took 2,787321 s
+18/06/05 17:18:12 INFO MapPartitionsRDD: Removing RDD 17 from persistence list
+18/06/05 17:18:12 INFO BlockManager: Removing RDD 17
+18/06/05 17:18:12 INFO RandomForest: Internal timing for DecisionTree:
+18/06/05 17:18:12 INFO RandomForest:   init: 4.510673604
+  total: 15.204265202
+  findSplits: 3.486818292
+  findBestSplits: 10.621953557
+  chooseSplits: 10.608501476
+18/06/05 17:18:12 INFO SparkContext: Starting job: count at OurRandomForest.scala:71
+18/06/05 17:18:12 INFO DAGScheduler: Got job 8 (count at OurRandomForest.scala:71) with 3 output partitions
+18/06/05 17:18:12 INFO DAGScheduler: Final stage: ResultStage 13 (count at OurRandomForest.scala:71)
+18/06/05 17:18:12 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:18:12 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:18:12 INFO DAGScheduler: Submitting ResultStage 13 (MapPartitionsRDD[31] at filter at OurRandomForest.scala:71), which has no missing parents
+18/06/05 17:18:12 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 144.4 KB, free 271.1 MB)
+18/06/05 17:18:12 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 60.4 KB, free 271.0 MB)
+18/06/05 17:18:12 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on 172.17.9.20:34557 (size: 60.4 KB, free: 271.3 MB)
+18/06/05 17:18:12 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:12 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 13 (MapPartitionsRDD[31] at filter at OurRandomForest.scala:71) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:12 INFO TaskSchedulerImpl: Adding task set 13.0 with 3 tasks
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 1.0 in stage 13.0 (TID 37, localhost, executor driver, partition 1, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 2.0 in stage 13.0 (TID 38, localhost, executor driver, partition 2, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:12 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 39, localhost, executor driver, partition 0, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:12 INFO Executor: Running task 2.0 in stage 13.0 (TID 38)
+18/06/05 17:18:12 INFO Executor: Running task 0.0 in stage 13.0 (TID 39)
+18/06/05 17:18:12 INFO Executor: Running task 1.0 in stage 13.0 (TID 37)
+18/06/05 17:18:12 INFO BlockManager: Found block rdd_4_2 locally
+18/06/05 17:18:12 INFO HadoopRDD: Input split: file:/home/eisti/spark/data/mllib/wave500k_libsvm.txt:0+33554432
+18/06/05 17:18:12 INFO BlockManager: Found block rdd_4_1 locally
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 294
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 295
+18/06/05 17:18:12 INFO BlockManagerInfo: Removed broadcast_15_piece0 on 172.17.9.20:34557 in memory (size: 7.4 KB, free: 271.3 MB)
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 293
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 304
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 281
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 308
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 309
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 300
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 292
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 314
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 285
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 287
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 312
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 306
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 290
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 324
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 298
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 299
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 277
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 280
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 289
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 284
+18/06/05 17:18:12 INFO BlockManagerInfo: Removed broadcast_17_piece0 on 172.17.9.20:34557 in memory (size: 19.0 KB, free: 271.3 MB)
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 282
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 322
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 305
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 307
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 276
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 319
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 275
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 318
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 317
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 316
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 279
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 288
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 315
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 310
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 303
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned shuffle 4
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 296
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 302
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 291
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 283
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 278
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 313
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 297
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 320
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 301
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 286
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 311
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 321
+18/06/05 17:18:12 INFO ContextCleaner: Cleaned accumulator 323
+18/06/05 17:18:13 INFO Executor: Finished task 2.0 in stage 13.0 (TID 38). 875 bytes result sent to driver
+18/06/05 17:18:13 INFO TaskSetManager: Finished task 2.0 in stage 13.0 (TID 38) in 1122 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:14 INFO Executor: Finished task 1.0 in stage 13.0 (TID 37). 875 bytes result sent to driver
+18/06/05 17:18:14 INFO TaskSetManager: Finished task 1.0 in stage 13.0 (TID 37) in 2106 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:14 INFO MemoryStore: Block rdd_4_0 stored as values in memory (estimated size 66.7 MB, free 204.4 MB)
+18/06/05 17:18:14 INFO BlockManagerInfo: Added rdd_4_0 in memory on 172.17.9.20:34557 (size: 66.7 MB, free: 204.6 MB)
+18/06/05 17:18:15 INFO Executor: Finished task 0.0 in stage 13.0 (TID 39). 875 bytes result sent to driver
+18/06/05 17:18:15 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 39) in 3479 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:15 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+18/06/05 17:18:15 INFO DAGScheduler: ResultStage 13 (count at OurRandomForest.scala:71) finished in 3,491 s
+18/06/05 17:18:15 INFO DAGScheduler: Job 8 finished: count at OurRandomForest.scala:71, took 3,494653 s
+18/06/05 17:18:15 INFO SparkContext: Starting job: count at OurRandomForest.scala:71
+18/06/05 17:18:15 INFO DAGScheduler: Got job 9 (count at OurRandomForest.scala:71) with 3 output partitions
+18/06/05 17:18:15 INFO DAGScheduler: Final stage: ResultStage 14 (count at OurRandomForest.scala:71)
+18/06/05 17:18:15 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:18:15 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:18:15 INFO DAGScheduler: Submitting ResultStage 14 (MapPartitionsRDD[8] at randomSplit at OurRandomForest.scala:50), which has no missing parents
+18/06/05 17:18:15 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 4.3 KB, free 204.4 MB)
+18/06/05 17:18:15 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 2.4 KB, free 204.4 MB)
+18/06/05 17:18:15 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on 172.17.9.20:34557 (size: 2.4 KB, free: 204.6 MB)
+18/06/05 17:18:15 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:15 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 14 (MapPartitionsRDD[8] at randomSplit at OurRandomForest.scala:50) (first 15 tasks are for partitions Vector(0, 1, 2))
+18/06/05 17:18:15 INFO TaskSchedulerImpl: Adding task set 14.0 with 3 tasks
+18/06/05 17:18:15 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 40, localhost, executor driver, partition 0, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:15 INFO TaskSetManager: Starting task 1.0 in stage 14.0 (TID 41, localhost, executor driver, partition 1, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:15 INFO TaskSetManager: Starting task 2.0 in stage 14.0 (TID 42, localhost, executor driver, partition 2, PROCESS_LOCAL, 7900 bytes)
+18/06/05 17:18:15 INFO Executor: Running task 1.0 in stage 14.0 (TID 41)
+18/06/05 17:18:15 INFO Executor: Running task 0.0 in stage 14.0 (TID 40)
+18/06/05 17:18:15 INFO Executor: Running task 2.0 in stage 14.0 (TID 42)
+18/06/05 17:18:15 INFO BlockManager: Found block rdd_4_1 locally
+18/06/05 17:18:15 INFO BlockManager: Found block rdd_4_0 locally
+18/06/05 17:18:15 INFO BlockManager: Found block rdd_4_2 locally
+18/06/05 17:18:15 INFO Executor: Finished task 2.0 in stage 14.0 (TID 42). 875 bytes result sent to driver
+18/06/05 17:18:15 INFO TaskSetManager: Finished task 2.0 in stage 14.0 (TID 42) in 27 ms on localhost (executor driver) (1/3)
+18/06/05 17:18:15 INFO Executor: Finished task 0.0 in stage 14.0 (TID 40). 875 bytes result sent to driver
+18/06/05 17:18:15 INFO Executor: Finished task 1.0 in stage 14.0 (TID 41). 875 bytes result sent to driver
+18/06/05 17:18:15 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 40) in 34 ms on localhost (executor driver) (2/3)
+18/06/05 17:18:15 INFO TaskSetManager: Finished task 1.0 in stage 14.0 (TID 41) in 34 ms on localhost (executor driver) (3/3)
+18/06/05 17:18:15 INFO TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+18/06/05 17:18:15 INFO DAGScheduler: ResultStage 14 (count at OurRandomForest.scala:71) finished in 0,040 s
+18/06/05 17:18:15 INFO DAGScheduler: Job 9 finished: count at OurRandomForest.scala:71, took 0,046539 s
+18/06/05 17:18:16 INFO deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+18/06/05 17:18:16 INFO SparkContext: Starting job: runJob at SparkHadoopWriter.scala:78
+18/06/05 17:18:16 INFO DAGScheduler: Got job 10 (runJob at SparkHadoopWriter.scala:78) with 1 output partitions
+18/06/05 17:18:16 INFO DAGScheduler: Final stage: ResultStage 15 (runJob at SparkHadoopWriter.scala:78)
+18/06/05 17:18:16 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:18:16 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:18:16 INFO DAGScheduler: Submitting ResultStage 15 (MapPartitionsRDD[33] at saveAsTextFile at treeEnsembleModels.scala:440), which has no missing parents
+18/06/05 17:18:16 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 63.9 KB, free 204.4 MB)
+18/06/05 17:18:16 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 22.3 KB, free 204.4 MB)
+18/06/05 17:18:16 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on 172.17.9.20:34557 (size: 22.3 KB, free: 204.6 MB)
+18/06/05 17:18:16 INFO SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:16 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 15 (MapPartitionsRDD[33] at saveAsTextFile at treeEnsembleModels.scala:440) (first 15 tasks are for partitions Vector(0))
+18/06/05 17:18:16 INFO TaskSchedulerImpl: Adding task set 15.0 with 1 tasks
+18/06/05 17:18:16 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 43, localhost, executor driver, partition 0, PROCESS_LOCAL, 8245 bytes)
+18/06/05 17:18:16 INFO Executor: Running task 0.0 in stage 15.0 (TID 43)
+18/06/05 17:18:16 INFO FileOutputCommitter: Saved output of task 'attempt_20180605171816_0033_m_000000_0' to file:/home/eisti/spark/target/tmp/ourRandomForestClassificationModel/metadata/_temporary/0/task_20180605171816_0033_m_000000
+18/06/05 17:18:16 INFO SparkHadoopMapRedUtil: attempt_20180605171816_0033_m_000000_0: Committed
+18/06/05 17:18:16 INFO Executor: Finished task 0.0 in stage 15.0 (TID 43). 1029 bytes result sent to driver
+18/06/05 17:18:16 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 43) in 102 ms on localhost (executor driver) (1/1)
+18/06/05 17:18:16 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+18/06/05 17:18:16 INFO DAGScheduler: ResultStage 15 (runJob at SparkHadoopWriter.scala:78) finished in 0,118 s
+18/06/05 17:18:16 INFO DAGScheduler: Job 10 finished: runJob at SparkHadoopWriter.scala:78, took 0,121191 s
+18/06/05 17:18:16 INFO SparkHadoopWriter: Job job_20180605171816_0033 committed.
+18/06/05 17:18:19 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/home/eisti/spark/spark-warehouse').
+18/06/05 17:18:19 INFO SharedState: Warehouse path is 'file:/home/eisti/spark/spark-warehouse'.
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 381
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 396
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 399
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 388
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 364
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 373
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 354
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 394
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 351
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 367
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 361
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 393
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 382
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 387
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 365
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 398
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 355
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 379
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 372
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 363
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 356
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 395
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 389
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 380
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 370
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 352
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 371
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 375
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 350
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 376
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 369
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 397
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 384
+18/06/05 17:18:19 INFO BlockManagerInfo: Removed broadcast_20_piece0 on 172.17.9.20:34557 in memory (size: 22.3 KB, free: 204.6 MB)
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 358
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 383
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 368
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 359
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 392
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 357
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 390
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 366
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 377
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 360
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 353
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 386
+18/06/05 17:18:19 INFO BlockManagerInfo: Removed broadcast_19_piece0 on 172.17.9.20:34557 in memory (size: 2.4 KB, free: 204.6 MB)
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 385
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 374
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 391
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 362
+18/06/05 17:18:19 INFO ContextCleaner: Cleaned accumulator 378
+18/06/05 17:18:19 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+18/06/05 17:18:20 INFO ParquetFileFormat: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:20 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:20 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO CodeGenerator: Code generated in 398.659648 ms
+18/06/05 17:18:21 INFO SparkContext: Starting job: parquet at treeEnsembleModels.scala:446
+18/06/05 17:18:21 INFO DAGScheduler: Got job 11 (parquet at treeEnsembleModels.scala:446) with 4 output partitions
+18/06/05 17:18:21 INFO DAGScheduler: Final stage: ResultStage 16 (parquet at treeEnsembleModels.scala:446)
+18/06/05 17:18:21 INFO DAGScheduler: Parents of final stage: List()
+18/06/05 17:18:21 INFO DAGScheduler: Missing parents: List()
+18/06/05 17:18:21 INFO DAGScheduler: Submitting ResultStage 16 (MapPartitionsRDD[37] at parquet at treeEnsembleModels.scala:446), which has no missing parents
+18/06/05 17:18:21 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 162.7 KB, free 204.3 MB)
+18/06/05 17:18:21 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 53.2 KB, free 204.2 MB)
+18/06/05 17:18:21 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on 172.17.9.20:34557 (size: 53.2 KB, free: 204.6 MB)
+18/06/05 17:18:21 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1039
+18/06/05 17:18:21 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 16 (MapPartitionsRDD[37] at parquet at treeEnsembleModels.scala:446) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+18/06/05 17:18:21 INFO TaskSchedulerImpl: Adding task set 16.0 with 4 tasks
+18/06/05 17:18:21 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 44, localhost, executor driver, partition 0, PROCESS_LOCAL, 43620 bytes)
+18/06/05 17:18:21 INFO TaskSetManager: Starting task 1.0 in stage 16.0 (TID 45, localhost, executor driver, partition 1, PROCESS_LOCAL, 46555 bytes)
+18/06/05 17:18:21 INFO TaskSetManager: Starting task 2.0 in stage 16.0 (TID 46, localhost, executor driver, partition 2, PROCESS_LOCAL, 42455 bytes)
+18/06/05 17:18:21 INFO TaskSetManager: Starting task 3.0 in stage 16.0 (TID 47, localhost, executor driver, partition 3, PROCESS_LOCAL, 47499 bytes)
+18/06/05 17:18:21 INFO Executor: Running task 1.0 in stage 16.0 (TID 45)
+18/06/05 17:18:21 INFO Executor: Running task 0.0 in stage 16.0 (TID 44)
+18/06/05 17:18:21 INFO Executor: Running task 2.0 in stage 16.0 (TID 46)
+18/06/05 17:18:21 INFO Executor: Running task 3.0 in stage 16.0 (TID 47)
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO CodecConfig: Compression: SNAPPY
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet block size to 134217728
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Dictionary is on
+18/06/05 17:18:21 INFO ParquetOutputFormat: Validation is off
+18/06/05 17:18:21 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+18/06/05 17:18:21 INFO ParquetOutputFormat: Maximum row group padding size is 0 bytes
+18/06/05 17:18:21 INFO ParquetOutputFormat: Page size checking is: estimated
+18/06/05 17:18:21 INFO ParquetOutputFormat: Min row count for page size check is: 100
+18/06/05 17:18:21 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet block size to 134217728
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Dictionary is on
+18/06/05 17:18:21 INFO ParquetOutputFormat: Validation is off
+18/06/05 17:18:21 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+18/06/05 17:18:21 INFO ParquetOutputFormat: Maximum row group padding size is 0 bytes
+18/06/05 17:18:21 INFO ParquetOutputFormat: Page size checking is: estimated
+18/06/05 17:18:21 INFO ParquetOutputFormat: Min row count for page size check is: 100
+18/06/05 17:18:21 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet block size to 134217728
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Dictionary is on
+18/06/05 17:18:21 INFO ParquetOutputFormat: Validation is off
+18/06/05 17:18:21 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+18/06/05 17:18:21 INFO ParquetOutputFormat: Maximum row group padding size is 0 bytes
+18/06/05 17:18:21 INFO ParquetOutputFormat: Page size checking is: estimated
+18/06/05 17:18:21 INFO ParquetOutputFormat: Min row count for page size check is: 100
+18/06/05 17:18:21 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet block size to 134217728
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Parquet dictionary page size to 1048576
+18/06/05 17:18:21 INFO ParquetOutputFormat: Dictionary is on
+18/06/05 17:18:21 INFO ParquetOutputFormat: Validation is off
+18/06/05 17:18:21 INFO ParquetOutputFormat: Writer version is: PARQUET_1_0
+18/06/05 17:18:21 INFO ParquetOutputFormat: Maximum row group padding size is 0 bytes
+18/06/05 17:18:21 INFO ParquetOutputFormat: Page size checking is: estimated
+18/06/05 17:18:21 INFO ParquetOutputFormat: Min row count for page size check is: 100
+18/06/05 17:18:21 INFO ParquetOutputFormat: Max row count for page size check is: 10000
+18/06/05 17:18:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "treeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "nodeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "predict",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "predict",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "prob",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "impurity",
+    "type" : "double",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "isLeaf",
+    "type" : "boolean",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "split",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "feature",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "threshold",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "featureType",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "categories",
+        "type" : {
+          "type" : "array",
+          "elementType" : "double",
+          "containsNull" : false
+        },
+        "nullable" : true,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "leftNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "rightNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "infoGain",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int32 treeId;
+  required int32 nodeId;
+  optional group predict {
+    required double predict;
+    required double prob;
+  }
+  required double impurity;
+  required boolean isLeaf;
+  optional group split {
+    required int32 feature;
+    required double threshold;
+    required int32 featureType;
+    optional group categories (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional int32 leftNodeId;
+  optional int32 rightNodeId;
+  optional double infoGain;
+}
+
+       
+18/06/05 17:18:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "treeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "nodeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "predict",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "predict",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "prob",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "impurity",
+    "type" : "double",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "isLeaf",
+    "type" : "boolean",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "split",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "feature",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "threshold",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "featureType",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "categories",
+        "type" : {
+          "type" : "array",
+          "elementType" : "double",
+          "containsNull" : false
+        },
+        "nullable" : true,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "leftNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "rightNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "infoGain",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int32 treeId;
+  required int32 nodeId;
+  optional group predict {
+    required double predict;
+    required double prob;
+  }
+  required double impurity;
+  required boolean isLeaf;
+  optional group split {
+    required int32 feature;
+    required double threshold;
+    required int32 featureType;
+    optional group categories (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional int32 leftNodeId;
+  optional int32 rightNodeId;
+  optional double infoGain;
+}
+
+       
+18/06/05 17:18:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "treeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "nodeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "predict",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "predict",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "prob",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "impurity",
+    "type" : "double",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "isLeaf",
+    "type" : "boolean",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "split",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "feature",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "threshold",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "featureType",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "categories",
+        "type" : {
+          "type" : "array",
+          "elementType" : "double",
+          "containsNull" : false
+        },
+        "nullable" : true,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "leftNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "rightNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "infoGain",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int32 treeId;
+  required int32 nodeId;
+  optional group predict {
+    required double predict;
+    required double prob;
+  }
+  required double impurity;
+  required boolean isLeaf;
+  optional group split {
+    required int32 feature;
+    required double threshold;
+    required int32 featureType;
+    optional group categories (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional int32 leftNodeId;
+  optional int32 rightNodeId;
+  optional double infoGain;
+}
+
+       
+18/06/05 17:18:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "treeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "nodeId",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "predict",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "predict",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "prob",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "impurity",
+    "type" : "double",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "isLeaf",
+    "type" : "boolean",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "split",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "feature",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "threshold",
+        "type" : "double",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "featureType",
+        "type" : "integer",
+        "nullable" : false,
+        "metadata" : { }
+      }, {
+        "name" : "categories",
+        "type" : {
+          "type" : "array",
+          "elementType" : "double",
+          "containsNull" : false
+        },
+        "nullable" : true,
+        "metadata" : { }
+      } ]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "leftNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "rightNodeId",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "infoGain",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int32 treeId;
+  required int32 nodeId;
+  optional group predict {
+    required double predict;
+    required double prob;
+  }
+  required double impurity;
+  required boolean isLeaf;
+  optional group split {
+    required int32 feature;
+    required double threshold;
+    required int32 featureType;
+    optional group categories (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional int32 leftNodeId;
+  optional int32 rightNodeId;
+  optional double infoGain;
+}
+
+       
+18/06/05 17:18:22 INFO CodecPool: Got brand-new compressor [.snappy]
+18/06/05 17:18:22 INFO CodecPool: Got brand-new compressor [.snappy]
+18/06/05 17:18:22 INFO CodecPool: Got brand-new compressor [.snappy]
+18/06/05 17:18:22 INFO CodecPool: Got brand-new compressor [.snappy]
+18/06/05 17:18:22 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 81307
+18/06/05 17:18:22 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 83159
+18/06/05 17:18:22 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 83611
+18/06/05 17:18:22 INFO InternalParquetRecordWriter: Flushing mem columnStore to file. allocated memory: 81879
+18/06/05 17:18:22 INFO FileOutputCommitter: Saved output of task 'attempt_20180605171821_0016_m_000000_0' to file:/home/eisti/spark/target/tmp/ourRandomForestClassificationModel/data/_temporary/0/task_20180605171821_0016_m_000000
+18/06/05 17:18:22 INFO SparkHadoopMapRedUtil: attempt_20180605171821_0016_m_000000_0: Committed
+18/06/05 17:18:22 INFO FileOutputCommitter: Saved output of task 'attempt_20180605171821_0016_m_000002_0' to file:/home/eisti/spark/target/tmp/ourRandomForestClassificationModel/data/_temporary/0/task_20180605171821_0016_m_000002
+18/06/05 17:18:22 INFO FileOutputCommitter: Saved output of task 'attempt_20180605171821_0016_m_000003_0' to file:/home/eisti/spark/target/tmp/ourRandomForestClassificationModel/data/_temporary/0/task_20180605171821_0016_m_000003
+18/06/05 17:18:22 INFO SparkHadoopMapRedUtil: attempt_20180605171821_0016_m_000003_0: Committed
+18/06/05 17:18:22 INFO Executor: Finished task 3.0 in stage 16.0 (TID 47). 2133 bytes result sent to driver
+18/06/05 17:18:22 INFO TaskSetManager: Finished task 3.0 in stage 16.0 (TID 47) in 996 ms on localhost (executor driver) (1/4)
+18/06/05 17:18:22 INFO FileOutputCommitter: Saved output of task 'attempt_20180605171821_0016_m_000001_0' to file:/home/eisti/spark/target/tmp/ourRandomForestClassificationModel/data/_temporary/0/task_20180605171821_0016_m_000001
+18/06/05 17:18:22 INFO SparkHadoopMapRedUtil: attempt_20180605171821_0016_m_000002_0: Committed
+18/06/05 17:18:22 INFO SparkHadoopMapRedUtil: attempt_20180605171821_0016_m_000001_0: Committed
+18/06/05 17:18:22 INFO Executor: Finished task 2.0 in stage 16.0 (TID 46). 2133 bytes result sent to driver
+18/06/05 17:18:22 INFO Executor: Finished task 0.0 in stage 16.0 (TID 44). 2133 bytes result sent to driver
+18/06/05 17:18:22 INFO Executor: Finished task 1.0 in stage 16.0 (TID 45). 2133 bytes result sent to driver
+18/06/05 17:18:22 INFO TaskSetManager: Finished task 2.0 in stage 16.0 (TID 46) in 1004 ms on localhost (executor driver) (2/4)
+18/06/05 17:18:22 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 44) in 1007 ms on localhost (executor driver) (3/4)
+18/06/05 17:18:22 INFO TaskSetManager: Finished task 1.0 in stage 16.0 (TID 45) in 1006 ms on localhost (executor driver) (4/4)
+18/06/05 17:18:22 INFO TaskSchedulerImpl: Removed TaskSet 16.0, whose tasks have all completed, from pool 
+18/06/05 17:18:22 INFO DAGScheduler: ResultStage 16 (parquet at treeEnsembleModels.scala:446) finished in 1,035 s
+18/06/05 17:18:22 INFO DAGScheduler: Job 11 finished: parquet at treeEnsembleModels.scala:446, took 1,038280 s
+18/06/05 17:18:22 INFO FileFormatWriter: Job null committed.
+18/06/05 17:18:22 INFO FileFormatWriter: Finished processing stats for job null.
+18/06/05 17:18:22 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 216.8 KB, free 204.0 MB)
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 423
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 402
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 419
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 415
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 408
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 413
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 412
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 429
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 425
+18/06/05 17:18:22 INFO BlockManagerInfo: Removed broadcast_21_piece0 on 172.17.9.20:34557 in memory (size: 53.2 KB, free: 204.6 MB)
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 405
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 420
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 409
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 407
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 426
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 404
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 417
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 416
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 411
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 430
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 421
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 424
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 414
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 410
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 401
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 427
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 400
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 403
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 406
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 422
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 428
+18/06/05 17:18:22 INFO ContextCleaner: Cleaned accumulator 418
+18/06/05 17:18:22 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 20.5 KB, free 204.2 MB)
+18/06/05 17:18:22 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on 172.17.9.20:34557 (size: 20.5 KB, free: 204.6 MB)
+18/06/05 17:18:22 INFO SparkContext: Created broadcast 22 from textFile at modelSaveLoad.scala:129
+Exception in thread "main" org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/home/eisti/spark/target/tmp/myRandomForestClassificationModel/metadata
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:285)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:228)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:313)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:200)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1337)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.take(RDD.scala:1331)
+	at org.apache.spark.rdd.RDD$$anonfun$first$1.apply(RDD.scala:1372)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.first(RDD.scala:1371)
+	at org.apache.spark.mllib.util.Loader$.loadMetadata(modelSaveLoad.scala:129)
+	at org.apache.spark.mllib.tree.model.RandomForestModel$.load(treeEnsembleModels.scala:86)
+	at org.apache.spark.examples.mllib.OurRandomForest$.main(OurRandomForest.scala:77)
+	at org.apache.spark.examples.mllib.OurRandomForest.main(OurRandomForest.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:891)
+	at org.apache.spark.deploy.SparkSubmit$.doRunMain$1(SparkSubmit.scala:197)
+	at org.apache.spark.deploy.SparkSubmit$.submit(SparkSubmit.scala:227)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:136)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+18/06/05 17:18:22 INFO SparkContext: Invoking stop() from shutdown hook
+18/06/05 17:18:22 INFO SparkUI: Stopped Spark web UI at http://172.17.9.20:4040
+18/06/05 17:18:22 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/06/05 17:18:23 INFO MemoryStore: MemoryStore cleared
+18/06/05 17:18:23 INFO BlockManager: BlockManager stopped
+18/06/05 17:18:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/06/05 17:18:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/06/05 17:18:23 INFO SparkContext: Successfully stopped SparkContext
+18/06/05 17:18:23 INFO ShutdownHookManager: Shutdown hook called
+18/06/05 17:18:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-25055b2d-6c7d-4a73-b69f-e986a24f696d
+18/06/05 17:18:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-700e7b17-bb5e-4273-aa9d-31633a01bd1b

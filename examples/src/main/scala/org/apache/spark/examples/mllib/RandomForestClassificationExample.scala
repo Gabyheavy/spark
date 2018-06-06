@@ -30,7 +30,7 @@ object RandomForestClassificationExample {
     val conf = new SparkConf().setAppName("RandomForestClassificationExample")
     val sc = new SparkContext(conf)
     // do not print all the log
-    sc.setLogLevel("ERROR")
+    // sc.setLogLevel("ERROR")
     // $example on$
     // Load and parse the data file.
     val data = MLUtils.loadLibSVMFile(sc, "data/mllib/sample_libsvm_data.txt")
