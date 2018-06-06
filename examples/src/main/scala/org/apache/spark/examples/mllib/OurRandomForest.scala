@@ -57,7 +57,7 @@ object OurRandomForest {
     val numTrees = 50 // Use more in practice.
     val featureSubsetStrategy = "auto" // Let the algorithm choose.
     val impurity = "gini"
-    val maxDepth = 4
+    val maxDepth = 5
     val maxBins = 32
 
     val model = RandomForest.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo,
@@ -69,8 +69,8 @@ object OurRandomForest {
       (point.label, prediction)
     }
     val testErr = labelAndPreds.filter(r => r._1 != r._2).count.toDouble / testData.count()
-    // println(s"Test Error = $testErr")
-    // println(s"Learned classification forest model:\n ${model.toDebugString}")
+    println(s"Test Error = $testErr")
+    println(s"Learned classification forest model:\n ${model.toDebugString}")
 
     // Save and load model
     model.save(sc, "target/tmp/ourRandomForestClassificationModel")
