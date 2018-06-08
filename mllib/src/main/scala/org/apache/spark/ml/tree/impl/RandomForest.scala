@@ -1101,7 +1101,9 @@ private[spark] object RandomForest extends Logging {
     var groupDone = false
     while (nodeStack.nonEmpty && !groupDone) {
       val (treeIndex, node) = nodeStack.top
-      // Choose subset of features for node (if subsampling).
+      // Choose subset of features for node
+      // HERE I WOULD DO A MAP OF LIST OF INTEGER KEYED BY TREEINDEX AND THEN I GET THE CORRESPONDING ELEMENT
+      // (if subsampling).
       val featureSubset: Option[Array[Int]] = if (metadata.subsamplingFeatures) {
         Some(SamplingUtils.reservoirSampleAndCount(Range(0,
           metadata.numFeatures).iterator, metadata.numFeaturesPerNode, rng.nextLong())._1)
