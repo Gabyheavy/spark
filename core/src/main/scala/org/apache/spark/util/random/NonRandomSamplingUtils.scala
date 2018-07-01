@@ -13,7 +13,7 @@ import scala.collection.mutable.Map
 import scala.reflect.ClassTag
 import scala.util.Random
 
-private[spark] object NonRandomSamplingUtils extends App{
+private[spark] object NonRandomSamplingUtils{
 
 
   /**
@@ -37,8 +37,8 @@ private[spark] object NonRandomSamplingUtils extends App{
 
   def defineCouple(nbrVariable: Int): ListBuffer[List[Int]] = {
     var listCouple = ListBuffer[List[Int]]()
-    for (i <- 1 to nbrVariable) {
-      for (j <- i + 1 to nbrVariable) {
+    for (i <- 0 to nbrVariable - 1) {
+      for (j <- i + 1 to nbrVariable - 1) {
         listCouple = listCouple :+ (i :: j :: Nil)
       }
 
@@ -48,7 +48,7 @@ private[spark] object NonRandomSamplingUtils extends App{
 
   def defineVariable(nbrVariable: Int): ListBuffer[Int] = {
     var listVariable = ListBuffer[Int]()
-    for (i <- 1 to nbrVariable) {
+    for (i <- 0 to nbrVariable - 1) {
       listVariable = listVariable :+ i
     }
     return listVariable
@@ -101,28 +101,28 @@ private[spark] object NonRandomSamplingUtils extends App{
   def updateSelectedVariable1(coupleAddedToTree: List[Int], listSelectedBinary: ListBuffer[Int],
                               listSelectedVariables: ListBuffer[Int],
                               cumSelectedVariables: ListBuffer[Int]): Unit = {
-    listSelectedBinary(coupleAddedToTree(0) - 1) = 1
-    listSelectedBinary(coupleAddedToTree(1) - 1) = 1
+    listSelectedBinary(coupleAddedToTree(0)) = 1
+    listSelectedBinary(coupleAddedToTree(1)) = 1
     if (!listSelectedVariables.contains(coupleAddedToTree(0))) {
       listSelectedVariables += coupleAddedToTree(0)
-      cumSelectedVariables(coupleAddedToTree(0) - 1) =
-        cumSelectedVariables(coupleAddedToTree(0) - 1) + 1
+      cumSelectedVariables(coupleAddedToTree(0)) =
+        cumSelectedVariables(coupleAddedToTree(0)) + 1
     }
     if (!listSelectedVariables.contains(coupleAddedToTree(1))) {
       listSelectedVariables += coupleAddedToTree(1)
-      cumSelectedVariables(coupleAddedToTree(1) - 1) =
-        cumSelectedVariables(coupleAddedToTree(1) - 1) + 1
+      cumSelectedVariables(coupleAddedToTree(1)) =
+        cumSelectedVariables(coupleAddedToTree(1)) + 1
     }
   }
 
   def updateSelectedVariable2(variableAddedToTree: Int, listSelectedBinary: ListBuffer[Int],
                               listSelectedVariables: ListBuffer[Int],
                               cumSelectedVariables: ListBuffer[Int]): Unit = {
-    listSelectedBinary(variableAddedToTree - 1) = 1
+    listSelectedBinary(variableAddedToTree) = 1
     if (!listSelectedVariables.contains(variableAddedToTree)) {
       listSelectedVariables += variableAddedToTree
-      cumSelectedVariables(variableAddedToTree - 1) =
-        cumSelectedVariables(variableAddedToTree - 1) + 1
+      cumSelectedVariables(variableAddedToTree) =
+        cumSelectedVariables(variableAddedToTree) + 1
     }
   }
 
@@ -203,5 +203,5 @@ private[spark] object NonRandomSamplingUtils extends App{
 
   }
 
-  constructionTree(10, 300, 2)
+  //constructionTree(10, 300, 2)
 }
