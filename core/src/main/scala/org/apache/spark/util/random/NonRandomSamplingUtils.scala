@@ -63,20 +63,20 @@ private[spark] object NonRandomSamplingUtils{
         cumSelectedCoupleVariables(List(listSelectedVariables(i), coupleAddedToTree(0))) =
           cumSelectedCoupleVariables(List(listSelectedVariables(i), coupleAddedToTree(0))) + 1
       }
-      if (listCouple.contains(List(listSelectedVariables(0), coupleAddedToTree(i)))) {
+      if (listCouple.contains(List(coupleAddedToTree(0), listSelectedVariables(i)))) {
         listCouple -= List(coupleAddedToTree(0), listSelectedVariables(i))
-        cumSelectedCoupleVariables(List(listSelectedVariables(0), coupleAddedToTree(i))) =
-          cumSelectedCoupleVariables(List(listSelectedVariables(0), coupleAddedToTree(i))) + 1
+        cumSelectedCoupleVariables(List(coupleAddedToTree(0), listSelectedVariables(i))) =
+          cumSelectedCoupleVariables(List(coupleAddedToTree(0), listSelectedVariables(i))) + 1
       }
       if (listCouple.contains(List(listSelectedVariables(i), coupleAddedToTree(1)))) {
         listCouple -= List(listSelectedVariables(i), coupleAddedToTree(1))
         cumSelectedCoupleVariables(List(listSelectedVariables(i), coupleAddedToTree(1))) =
           cumSelectedCoupleVariables(List(listSelectedVariables(i), coupleAddedToTree(1))) + 1
       }
-      if (listCouple.contains(List(listSelectedVariables(1), coupleAddedToTree(i)))) {
+      if (listCouple.contains(List(coupleAddedToTree(1), listSelectedVariables(i)))) {
         listCouple -= List(coupleAddedToTree(1), listSelectedVariables(i))
-        cumSelectedCoupleVariables(List(listSelectedVariables(1), coupleAddedToTree(i))) =
-          cumSelectedCoupleVariables(List(listSelectedVariables(1), coupleAddedToTree(i))) + 1
+        cumSelectedCoupleVariables(List(coupleAddedToTree(1), listSelectedVariables(i))) =
+          cumSelectedCoupleVariables(List(coupleAddedToTree(1), listSelectedVariables(i))) + 1
       }
     }
   }
@@ -203,5 +203,4 @@ private[spark] object NonRandomSamplingUtils{
 
   }
 
-  //constructionTree(10, 300, 2)
 }
