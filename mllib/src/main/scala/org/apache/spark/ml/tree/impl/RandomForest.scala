@@ -33,7 +33,7 @@ import org.apache.spark.mllib.tree.impurity.ImpurityCalculator
 import org.apache.spark.mllib.tree.model.ImpurityStats
 import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
-import org.apache.spark.util.random.{SamplingUtils, XORShiftRandom}
+import org.apache.spark.util.random.{ NonRandomSamplingUtils, SamplingUtils, XORShiftRandom}
 
 
 /**
@@ -180,12 +180,16 @@ private[spark] object RandomForest extends Logging {
     Range(0, numTrees).foreach(treeIndex => nodeStack.push((treeIndex, topNodes(treeIndex))))
 
     timer.stop("init")
-
+    // scalastyle:off
+    println(s"Regenerating myListFeatureSubset")
+    // scalastyle:on
+    val myListFeatureSubset : List[Array[Int]] = NonRandomSamplingUtils.constructionTree(metadata.numFeatures,
+      metadata.numTrees, metadata.numFeaturesPerNode)
     while (nodeStack.nonEmpty) {
       // Collect some nodes to split, and choose features for each node (if subsampling).
       // Each group of nodes may come from one or multiple trees, and at multiple levels.
       val (nodesForGroup, treeToNodeToIndexInfo) =
-        RandomForest.selectNodesToSplit(nodeStack, maxMemoryUsage, metadata, rng)
+        RandomForest.selectNodesToSplit(nodeStack, maxMemoryUsage, metadata, rng, myListFeatureSubset)
       // Sanity check (should never occur):
       assert(nodesForGroup.nonEmpty,
         s"RandomForest selected empty nodesForGroup.  Error for unknown reason.")
@@ -202,6 +206,7 @@ private[spark] object RandomForest extends Logging {
     }
 
     baggedInput.unpersist()
+
 
     timer.stop("total")
 
@@ -1088,7 +1093,8 @@ private[spark] object RandomForest extends Logging {
       nodeStack: mutable.ArrayStack[(Int, LearningNode)],
       maxMemoryUsage: Long,
       metadata: DecisionTreeMetadata,
-      rng: Random): (Map[Int, Array[LearningNode]], Map[Int, Map[Int, NodeIndexInfo]]) = {
+      rng: Random,
+      myListFeatureSubset: List[Array[Int]] = List[Array[Int]]()): (Map[Int, Array[LearningNode]], Map[Int, Map[Int, NodeIndexInfo]]) = {
     // Collect some nodes to split:
     //  nodesForGroup(treeIndex) = nodes to split
     val mutableNodesForGroup = new mutable.HashMap[Int, mutable.ArrayBuffer[LearningNode]]()
@@ -1099,11 +1105,32 @@ private[spark] object RandomForest extends Logging {
     // If maxMemoryInMB is set very small, we want to still try to split 1 node,
     // so we allow one iteration if memUsage == 0.
     var groupDone = false
+    // The list we constructed with all the list of var for each tree
+/*
+    // If this part is uncomment this is the method with one list per depth
+    // scalastyle:off
+    println(s"Regenerating myListFeatureSubset")
+    // scalastyle:on
+    val myListFeatureSubset : List[Array[Int]] = NonRandomSamplingUtils.constructionTree(metadata.numFeatures,
+      metadata.numTrees, metadata.numFeaturesPerNode)*/
     while (nodeStack.nonEmpty && !groupDone) {
+
       val (treeIndex, node) = nodeStack.top
       // Choose subset of features for node
-      // HERE I WOULD DO A MAP OF LIST OF INTEGER KEYED BY TREEINDEX AND THEN I GET THE CORRESPONDING ELEMENT
+      // HERE I WOULD DO A MAP OF LIST OF INTEGER KEYED
+      // BY TREEINDEX AND THEN I GET THE CORRESPONDING ELEMENT
       // (if subsampling).
+      val myFeatureSubset : Option[Array[Int]] = if (metadata.subsamplingFeatures) {
+        Some(myListFeatureSubset(treeIndex))
+      } else {
+        // scalastyle:off
+        println(s"no feature corresponding to treeIndex :  $treeIndex")
+        // scalastyle:on
+        None
+      }
+
+
+/*
       val featureSubset: Option[Array[Int]] = if (metadata.subsamplingFeatures) {
         Some(SamplingUtils.reservoirSampleAndCount(Range(0,
           metadata.numFeatures).iterator, metadata.numFeaturesPerNode, rng.nextLong())._1)
@@ -1111,20 +1138,27 @@ private[spark] object RandomForest extends Logging {
       } else {
         None
       }
+*/
 
-      val featureToPrint = featureSubset.getOrElse(Array(0)).mkString(" ")
+
+     // val featureToPrint = featureSubset.getOrElse(Array(0)).mkString(" ")
+      val myfistToPrint = myFeatureSubset.getOrElse(Array(0)).mkString(" ")
       // scalastyle:off
-      println(s"Here is the sampling : $featureToPrint ")
+/*      println(s"Taille myListFeatureSubset : ${myListFeatureSubset.size}")
+      println(s" treeIndex : $treeIndex")
+      println(s"Here is our sampling to print: $myfistToPrint ")*/
+
+      // println(s"Here is the sampling : $featureToPrint ")
       // scalastyle:on
       // Check if enough memory remains to add this node to the group.
-      val nodeMemUsage = RandomForest.aggregateSizeForNode(metadata, featureSubset) * 8L
+      val nodeMemUsage = RandomForest.aggregateSizeForNode(metadata, myFeatureSubset) * 8L
       if (memUsage + nodeMemUsage <= maxMemoryUsage || memUsage == 0) {
         nodeStack.pop()
         mutableNodesForGroup.getOrElseUpdate(treeIndex, new mutable.ArrayBuffer[LearningNode]()) +=
           node
         mutableTreeToNodeToIndexInfo
           .getOrElseUpdate(treeIndex, new mutable.HashMap[Int, NodeIndexInfo]())(node.id)
-          = new NodeIndexInfo(numNodesInGroup, featureSubset)
+          = new NodeIndexInfo(numNodesInGroup, myFeatureSubset)
         numNodesInGroup += 1
         memUsage += nodeMemUsage
       } else {
