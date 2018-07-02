@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-// scalastyle:off println
+// scalastyle:off printlnpackage
 package org.apache.spark.examples.mllib
 
 import org.apache.spark.{SparkConf, SparkContext}
