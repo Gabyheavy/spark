@@ -35,6 +35,9 @@ private[spark] object NonRandomSamplingUtils{
   }
 
 
+  //Function to calculate possible couple
+  //Parameter: number of variables
+  //Return: list of couples
   def defineCouple(nbrVariable: Int): ListBuffer[List[Int]] = {
     var listCouple = ListBuffer[List[Int]]()
     for (i <- 0 to nbrVariable - 1) {
@@ -46,6 +49,9 @@ private[spark] object NonRandomSamplingUtils{
     return listCouple
   }
 
+  //Function to have a list of all variables
+  //Parameter: number of variables
+  //Return: list of variables
   def defineVariable(nbrVariable: Int): ListBuffer[Int] = {
     var listVariable = ListBuffer[Int]()
     for (i <- 0 to nbrVariable - 1) {
@@ -54,6 +60,8 @@ private[spark] object NonRandomSamplingUtils{
     return listVariable
   }
 
+  //Function tu update the list of couple and to count the number of couple occurrences in the forest in case of adding a couple of variables
+  //Parametes: list of couples, added couple, list of variables, map of couples with corresponding occurrences in the forest
   def updateCouple1(listCouple: ListBuffer[List[Int]], coupleAddedToTree: List[Int],
                     listSelectedVariables: ListBuffer[Int],
                     cumSelectedCoupleVariables: Map[List[Int], Int]): Unit = {
@@ -81,6 +89,8 @@ private[spark] object NonRandomSamplingUtils{
     }
   }
 
+  //Function tu update the list of couple and to count the number of couple occurrences in the forest in case of adding a variable
+  //Parametes: list of couples, added couple, list of variables, map of couples with corresponding occurrences in the forest
   def updateCouple2(listCouple: ListBuffer[List[Int]], variableAddedToTree: Int,
                     listSelectedVariables: ListBuffer[Int],
                     cumSelectedCoupleVariables: Map[List[Int], Int]): Unit = {
@@ -98,6 +108,8 @@ private[spark] object NonRandomSamplingUtils{
     }
   }
 
+  //Function tu update the list of variables and to count the number of variable occurrences in the forest in case of adding a couple of variables
+  //Parametes: list of couples, added couple, list of variables, map of couples with corresponding occurrences in the forest
   def updateSelectedVariable1(coupleAddedToTree: List[Int], listSelectedBinary: ListBuffer[Int],
                               listSelectedVariables: ListBuffer[Int],
                               cumSelectedVariables: ListBuffer[Int]): Unit = {
@@ -115,6 +127,8 @@ private[spark] object NonRandomSamplingUtils{
     }
   }
 
+  //Function tu update the list of variables and to count the number of variable occurrences in the forest in case of adding a variable
+  //Parametes: list of couples, added couple, list of variables, map of couples with corresponding occurrences in the forest
   def updateSelectedVariable2(variableAddedToTree: Int, listSelectedBinary: ListBuffer[Int],
                               listSelectedVariables: ListBuffer[Int],
                               cumSelectedVariables: ListBuffer[Int]): Unit = {
@@ -126,16 +140,20 @@ private[spark] object NonRandomSamplingUtils{
     }
   }
 
+
+  //Principal Function to calculate variables to build each tree in the forest
+  //Parameter: number of variables, number of trees in the forest, number of variables per tree
+  //Return: list of array of variable indexes (representing a tree)
   def constructionTree(nbrVariable: Int, nbrTree: Int, nbrVarPerTree: Int): List[Array[Int]] = {
 
     var listCouple: ListBuffer[List[Int]] = defineCouple(nbrVariable)
     val listVariable: ListBuffer[Int] = defineVariable(nbrVariable)
     val rand = new Random(System.currentTimeMillis())
 
-    var resTreeForestVariables = List[Array[Int]]()
-    var resTreeForestBinary = List[Array[Int]]()
-    var resCumSelectedVariables = ListBuffer[Int]()
-    var resCumSelectedCoupleVariables = Map[List[Int], Int]()
+    var resTreeForestVariables = List[Array[Int]]() //List of array of variable indexes
+    var resTreeForestBinary = List[Array[Int]]()  //List of array of binary number (1 for taken 0 for not)
+    var resCumSelectedVariables = ListBuffer[Int]() //List with the occurrences of each variable
+    var resCumSelectedCoupleVariables = Map[List[Int], Int]() //Map with the occurrences of each couple
 
     for (i <- 1 to nbrVariable) {
       resCumSelectedVariables = resCumSelectedVariables :+ 0
@@ -152,7 +170,8 @@ private[spark] object NonRandomSamplingUtils{
         resOneTreeBinary = resOneTreeBinary :+ 0
       }
 
-
+      //For each tree, random selection of couple or variable (if it misses only one variable)
+      // Adding variables and updating lists
       for (j <- 1 to nbrVarPerTree) {
 
         while (resOneTreeVariables.length < nbrVarPerTree) {
@@ -188,16 +207,10 @@ private[spark] object NonRandomSamplingUtils{
         }
       }
 
-      // println(resOneTreeVariables.mkString(" "))
-
       resTreeForestVariables = resTreeForestVariables :+
-        resOneTreeVariables.toArray // To be conform with spark random forest
+        resOneTreeVariables.toArray
       resTreeForestBinary = resTreeForestBinary :+ resOneTreeBinary.toArray
     }
-
-    // scalastyle:off
-    //println(resCumSelectedCoupleVariables)
-    // scalastyle:on
 
     return resTreeForestVariables
 

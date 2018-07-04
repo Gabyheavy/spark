@@ -33,9 +33,9 @@ object OurRandomForestBenchmark {
     sc.setLogLevel("INFO")
 
     // Load and parse the data file.
-    val data = MLUtils.loadLibSVMFile(sc, "data/mllib/wave500k_libsvm.txt")
+    val data = MLUtils.loadLibSVMFile(sc, "data/mllib/dna_libsvm2.txt")
 
-    val nombreBoucle = 100
+    val nombreBoucle = 5
 
     var res = Array.fill[Double](nombreBoucle)(0.0)
     val start = System.nanoTime()
@@ -45,10 +45,10 @@ object OurRandomForestBenchmark {
 
       val numClasses = 3
       val categoricalFeaturesInfo = Map[Int, Int]()
-      val numTrees = 50 // Use more in practice.
-      val featureSubsetStrategy = "auto" // Let the algorithm choose.
+      val numTrees = 100 // Use more in practice.
+      val featureSubsetStrategy = "onethird" // Let the algorithm choose.
       val impurity = "gini"
-      val maxDepth = 5
+      val maxDepth = 10
       val maxBins = 32
 
       val model = RandomForest.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo,
@@ -60,7 +60,7 @@ object OurRandomForestBenchmark {
       }
       val testErr = labelAndPreds.filter(r => r._1 != r._2).count.toDouble / testData.count()
       println(s"Test Error = $testErr")
-      println(s"Learned classification forest model:\n ${model.toDebugString}")
+      // println(s"Learned classification forest model:\n ${model.toDebugString}")
 
       res(i - 1) = testErr
     }

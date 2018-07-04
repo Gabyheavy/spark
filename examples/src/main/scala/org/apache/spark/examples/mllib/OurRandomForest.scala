@@ -55,7 +55,7 @@ object OurRandomForest {
     val numClasses = 3
     val categoricalFeaturesInfo = Map[Int, Int]()
     val numTrees = 50 // Use more in practice.
-    val featureSubsetStrategy = "auto" // Let the algorithm choose.
+    val featureSubsetStrategy = "onethird" // Let the algorithm choose.
     val impurity = "gini"
     val maxDepth = 5
     val maxBins = 32
