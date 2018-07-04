@@ -183,11 +183,14 @@ private[spark] object RandomForest extends Logging {
     // scalastyle:off
     println(s"Regenerating myListFeatureSubset")
     // scalastyle:on
+
+    // this is where we create our list of Array for imposing it to trees
     val myListFeatureSubset : List[Array[Int]] = NonRandomSamplingUtils.constructionTree(metadata.numFeatures,
       metadata.numTrees, metadata.numFeaturesPerNode)
     while (nodeStack.nonEmpty) {
       // Collect some nodes to split, and choose features for each node (if subsampling).
       // Each group of nodes may come from one or multiple trees, and at multiple levels.
+      // Here we added myListFeatureSubset as an optionnal parameter
       val (nodesForGroup, treeToNodeToIndexInfo) =
         RandomForest.selectNodesToSplit(nodeStack, maxMemoryUsage, metadata, rng, myListFeatureSubset)
       // Sanity check (should never occur):
@@ -1094,6 +1097,7 @@ private[spark] object RandomForest extends Logging {
       maxMemoryUsage: Long,
       metadata: DecisionTreeMetadata,
       rng: Random,
+      // Here we added myListFeatureSubset as an optionnal parameter
       myListFeatureSubset: List[Array[Int]] = List[Array[Int]]()): (Map[Int, Array[LearningNode]], Map[Int, Map[Int, NodeIndexInfo]]) = {
     // Collect some nodes to split:
     //  nodesForGroup(treeIndex) = nodes to split
@@ -1117,9 +1121,8 @@ private[spark] object RandomForest extends Logging {
 
       val (treeIndex, node) = nodeStack.top
       // Choose subset of features for node
-      // HERE I WOULD DO A MAP OF LIST OF INTEGER KEYED
-      // BY TREEINDEX AND THEN I GET THE CORRESPONDING ELEMENT
       // (if subsampling).
+      // This is where we pick the coresponding list with the treeIndex as a list index
       val myFeatureSubset : Option[Array[Int]] = if (metadata.subsamplingFeatures) {
         Some(myListFeatureSubset(treeIndex))
       } else {
@@ -1131,6 +1134,9 @@ private[spark] object RandomForest extends Logging {
 
 
 /*
+
+// This is the previous code
+
       val featureSubset: Option[Array[Int]] = if (metadata.subsamplingFeatures) {
         Some(SamplingUtils.reservoirSampleAndCount(Range(0,
           metadata.numFeatures).iterator, metadata.numFeaturesPerNode, rng.nextLong())._1)
